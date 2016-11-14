@@ -1,0 +1,51 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+    <style name="myProgress">
+        <item name="android:indeterminateDrawable">@drawable/refresh_progress</item>
+        <item name="android:minWidth">25dp</item>
+        <item name="android:minHeight">25dp</item>
+        <item name="android:maxWidth">60dp</item>
+        <item name="android:maxHeight">60dp</item>
+    </style>
+
+    <style name="PersonCenterActivityTheme" parent="AppTheme">
+        <item name="android:windowAnimationStyle">@style/SlideBottomAnimation</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="HomeActivityTheme" parent="AppTheme">
+        <item name="android:windowAnimationStyle">@style/FadeExitAnimation</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="SlideBottomAnimation" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/anim_person_open_enter</item>
+        <!--<item name="android:activityCloseExitAnimation">@anim/anim_person_close_exit</item>-->
+        <item name="android:activityOpenExitAnimation">@anim/anim_person_open_exit</item>
+        <!--<item name="android:activityCloseEnterAnimation">@anim/anim_person_close_enter</item>-->
+    </style>
+
+    <style name="FadeExitAnimation" parent="@android:style/Animation.Activity">
+        <!--<item name="android:activityOpenEnterAnimation">@anim/anim_person_open_enter</item>-->
+        <item name="android:activityCloseExitAnimation">@anim/anim_person_close_exit</item>
+        <!--<item name="android:activityOpenExitAnimation">@anim/anim_person_open_exit</item>-->
+        <item name="android:activityCloseEnterAnimation">@anim/anim_person_close_enter</item>
+    </style>
+
+    <style name="style_bottom_dialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@color/color_white_smoke</item>
+        <!--<item name="android:backgroundDimEnabled">false</item>-->
+        <!--<item name="android:windowIsTranslucent">false</item>-->
+        <!--<item name="android:backgroundDimAmount">0.6</item>-->
+    </style>
+</resources>

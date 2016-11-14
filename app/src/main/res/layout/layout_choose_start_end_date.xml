@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+
+    <com.ejb.uplus.component.pickers.TwoTimePicker
+        android:id="@+id/two_time_picker"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title1="选择取车时间"
+        app:title2="选择还车时间"/>
+
+</LinearLayout>

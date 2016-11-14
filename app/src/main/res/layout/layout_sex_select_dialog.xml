@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/select_male_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:background="@drawable/btn_normal_bg">
+
+        <TextView
+            android:id="@+id/male_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#555"
+            android:textSize="16sp"
+            android:layout_centerInParent="true"
+            android:text="男"/>
+
+        <ImageView
+            android:id="@+id/male_icon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/male_text"
+            android:layout_toStartOf="@id/male_text"
+            android:layout_marginRight="16dp"
+            android:layout_marginEnd="16dp"
+            android:src="@mipmap/icon_male_normal"/>
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#ddd"/>
+
+    <RelativeLayout
+        android:id="@+id/select_female_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:background="@drawable/btn_normal_bg">
+
+        <TextView
+            android:id="@+id/female_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#555"
+            android:textSize="16sp"
+            android:layout_centerInParent="true"
+            android:text="女"/>
+
+        <ImageView
+            android:id="@+id/female_icon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/female_text"
+            android:layout_toStartOf="@id/female_text"
+            android:layout_marginRight="16dp"
+            android:layout_marginEnd="16dp"
+            android:src="@mipmap/icon_female_normal"/>
+
+    </RelativeLayout>
+</LinearLayout>

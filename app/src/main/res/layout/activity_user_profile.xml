@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/avatar"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:src="@mipmap/default_avatar"
+                    app:civ_border_color="#eee"
+                    app:civ_border_width="2dp"/>
+
+            </FrameLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#ddd"
+                android:layout_marginTop="8dp"/>
+
+            <RelativeLayout
+                android:id="@+id/mobile_btn"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:padding="@dimen/default_margin"
+                android:background="@drawable/card_bg_shadow_click"
+                android:clickable="true">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="@string/mobile_number"
+                    android:textSize="12sp"
+                    android:textColor="#333"/>
+
+                <ImageView
+                    android:id="@+id/arrow1"
+                    android:layout_width="@dimen/person_center_image_size"
+                    android:layout_height="@dimen/person_center_image_size"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    android:src="@mipmap/right_arrow_icon"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@id/arrow1"
+                    android:textSize="12sp"
+                    android:textColor="#999"
+                    android:layout_marginRight="8dp"
+                    android:text="请填写"
+                    android:id="@+id/mobile_text" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/sex_btn"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:padding="@dimen/default_margin"
+                android:background="@drawable/card_bg_shadow_click"
+                android:clickable="true">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="@string/sex"
+                    android:textSize="12sp"
+                    android:textColor="#333"/>
+
+                <ImageView
+                    android:id="@+id/arrow2"
+                    android:layout_width="@dimen/person_center_image_size"
+                    android:layout_height="@dimen/person_center_image_size"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    android:src="@mipmap/right_arrow_icon"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@id/arrow2"
+                    android:textSize="12sp"
+                    android:textColor="#999"
+                    android:layout_marginRight="8dp"
+                    android:text="请填写"
+                    android:id="@+id/sex_text" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/city_btn"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:padding="@dimen/default_margin"
+                android:background="@drawable/card_bg_shadow_click"
+                android:clickable="true">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="@string/living_city"
+                    android:textSize="12sp"
+                    android:textColor="#333"/>
+
+                <ImageView
+                    android:id="@+id/arrow3"
+                    android:layout_width="@dimen/person_center_image_size"
+                    android:layout_height="@dimen/person_center_image_size"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    android:src="@mipmap/right_arrow_icon"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@id/arrow3"
+                    android:textSize="12sp"
+                    android:textColor="#999"
+                    android:layout_marginRight="8dp"
+                    android:text="请填写"
+                    android:id="@+id/city_text" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#ddd"
+                android:layout_marginTop="8dp"/>
+
+            <RelativeLayout
+                android:id="@+id/modify_password_btn"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:padding="@dimen/default_margin"
+                android:background="@drawable/card_bg_shadow_click"
+                android:clickable="true">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="修改密码"
+                    android:textSize="12sp"
+                    android:textColor="#333"/>
+
+                <ImageView
+                    android:id="@+id/arrow4"
+                    android:layout_width="@dimen/person_center_image_size"
+                    android:layout_height="@dimen/person_center_image_size"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    android:src="@mipmap/right_arrow_icon"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@id/arrow4"
+                    android:textSize="12sp"
+                    android:textColor="#999"
+                    android:layout_marginRight="8dp"
+                    android:text="修改"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/logout_btn"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:padding="@dimen/default_margin"
+                android:background="@drawable/btn_bg_accent"
+                android:layout_margin="@dimen/default_margin"
+                android:clickable="true">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="退出登录"
+                    android:textSize="16sp"
+                    android:textColor="#fff"
+                    android:layout_centerInParent="true"/>
+
+
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

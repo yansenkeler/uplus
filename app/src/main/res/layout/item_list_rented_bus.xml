@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/btn_normal_bg"
+    android:paddingLeft="@dimen/default_margin"
+    android:paddingRight="@dimen/default_margin"
+    android:paddingTop="16dp"
+    android:paddingBottom="16dp">
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/snapshot"
+        android:layout_width="140dp"
+        android:layout_height="100dp"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/icon_def_auto"
+        android:layout_marginRight="8dp"
+        app:riv_corner_radius="4dp"/>
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/snapshot"
+        android:layout_toEndOf="@id/snapshot"
+        android:textColor="#333"
+        android:textSize="16sp"
+        android:text="name"/>
+
+    <TextView
+        android:id="@+id/price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:textColor="@android:color/holo_red_light"
+        android:textSize="16sp"
+        android:text="200元/天"/>
+
+    <TextView
+        android:id="@+id/address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/snapshot"
+        android:layout_below="@id/name"
+        android:layout_marginTop="8dp"
+        android:textSize="12sp"
+        android:textColor="#555"
+        android:layout_alignBottom="@id/snapshot"
+        android:text="张家港市杨舍镇国泰东方广场1102"
+        android:ellipsize="end"
+        />
+
+</RelativeLayout>

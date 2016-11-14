@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="56dp"
+            android:background="#eee">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.daimajia.slider.library.SliderLayout
+                    android:id="@+id/slide_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    app:pager_animation_span="1500"
+                    app:pager_animation="Default"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/default_margin"
+                    >
+
+                    <TextView
+                        android:id="@+id/tel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:textColor="@android:color/holo_blue_dark"
+                        android:layout_alignParentRight="true"
+                        android:layout_margin="@dimen/default_margin"
+                        android:text="18606547854"/>
+
+                    <TextView
+                        android:id="@+id/price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="20sp"
+                        android:textColor="@android:color/holo_red_dark"
+                        android:layout_margin="@dimen/default_margin"
+                        android:layout_alignParentRight="true"
+                        android:layout_below="@id/tel"
+                        android:text="150元/天"/>
+
+                    <TextView
+                        android:id="@+id/name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/default_margin"
+                        android:layout_alignParentLeft="true"
+                        android:layout_toLeftOf="@id/tel"
+                        android:textSize="20sp"
+                        android:textColor="#333"
+                        android:text="汉兰达"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_below="@id/name"
+                        android:layout_toLeftOf="@id/price"
+                        android:layout_margin="@dimen/default_margin"
+                        android:textSize="16sp"
+                        android:textColor="#555"
+                        android:maxLines="1"
+                        android:text="张家港市杨舍镇国泰东方广场"
+                        />
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_marginTop="@dimen/default_margin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/color_table_border">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/default_margin"
+                        android:layout_margin="1dp"
+                        android:textColor="#fff"
+                        android:textSize="12sp"
+                        android:gravity="center_vertical"
+                        android:background="@color/color_light_sky_blue"
+                        android:text="详细参数"/>
+                </LinearLayout>
+
+                <TableLayout
+                    android:id="@+id/table"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:stretchColumns="*"
+                    >
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"/>
+                    </TableRow>
+                </TableLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="#fff"
+            >
+
+            <TextView
+                android:id="@+id/subscribe_btn"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height_bottom_btn"
+                android:layout_margin="@dimen/default_margin"
+                android:gravity="center"
+                android:background="@drawable/btn_deep_sky_blue"
+                android:textColor="#fff"
+                android:clickable="true"
+                android:text="预订"/>
+
+        </FrameLayout>
+    </FrameLayout>
+
+</LinearLayout>

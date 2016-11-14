@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:background="#eee">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_marginLeft="@dimen/default_margin"
+        android:layout_marginRight="@dimen/default_margin"
+        android:layout_marginTop="@dimen/default_margin">
+
+        <EditText
+            android:id="@+id/mobile_input"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/input_bg"
+            android:paddingLeft="?attr/actionBarSize"
+            android:paddingStart="?attr/actionBarSize"
+            android:paddingRight="0dp"
+            android:paddingEnd="0dp"
+            android:hint="输入手机号码"
+            android:textColorHint="#999"
+            android:textSize="16sp"
+            android:textColor="#333"/>
+
+        <ImageView
+            android:layout_width="?attr/actionBarSize"
+            android:layout_height="?attr/actionBarSize"
+            android:padding="16dp"
+            android:src="@mipmap/phone_icon"
+            android:scaleType="fitCenter"/>
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_marginLeft="@dimen/default_margin"
+        android:layout_marginRight="@dimen/default_margin"
+        android:layout_marginTop="@dimen/default_margin">
+
+        <EditText
+            android:id="@+id/password_input"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/input_bg"
+            android:paddingLeft="?attr/actionBarSize"
+            android:paddingStart="?attr/actionBarSize"
+            android:paddingRight="0dp"
+            android:paddingEnd="0dp"
+            android:hint="输入密码"
+            android:textColorHint="#999"
+            android:textSize="16sp"
+            android:textColor="#333"
+            android:inputType="textPassword" />
+
+        <ImageView
+            android:layout_width="?attr/actionBarSize"
+            android:layout_height="?attr/actionBarSize"
+            android:padding="16dp"
+            android:src="@mipmap/password_icon"
+            android:scaleType="fitCenter"/>
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/forget_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:text="忘记密码?"
+        android:layout_margin="@dimen/default_margin"
+        android:textColor="#555"/>
+
+    <Button
+        android:id="@+id/login_btn"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/btn_deep_sky_blue"
+        android:textColor="#fff"
+        android:text="登录"
+        android:layout_margin="@dimen/default_margin"/>
+</LinearLayout>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#ff9800</color>
+    <color name="colorPrimaryDark">#000</color>
+    <color name="colorAccent">#5d9ff5</color>
+    <color name="colorAccentDark" >#4c8fe4</color>
+
+    <color name="tabNormal">#a9b7b7</color>
+    <color name="tabActive">#56abe4</color>
+    <color name="tabNormalBg">#fff</color>
+    <color name="tabActiveBg">#eee</color>
+
+    <color name="bar_title_color">#333</color>                          <!-- 顶部topbar控件字体的颜色-->
+
+    <color name="slide_normal_indicator_color">#fff</color>             <!-- 图片轮播控件焦点的平常颜色-->
+    <color name="slide_hover_indicator_color">#f00</color>              <!-- 图片轮播控件焦点的聚焦颜色-->
+
+    <color name="btn_grey1_normal">#eee</color>
+    <color name="btn_grey1_hover">#ddd</color>
+
+    <color name="btn_grey2_normal">#ddd</color>
+    <color name="btn_grey2_hover">#ccc</color>
+    <color name="color_table_border">#000</color>
+    <color name="color_table_key">#ddd</color>
+    <color name="color_table_value">#fff</color>
+
+    <color name="color_ghost_white">#F8F8FF</color>                      <!-- 幽灵的白色 -->
+    <color name="color_white_smoke">#F5F5F5</color>
+    <color name="color_azure">#F0FFFF</color>
+    <color name="color_pale_turquoise">#AFEEEE</color>
+    <color name="color_light_sky_blue">#87CEFA</color>
+    <color name="color_deep_sky_blue">#00BFFF</color>
+    <color name="color_deep_sky_blue_hover">#00AFFF</color>
+    <color name="color_crimson">#DC143C</color>
+    <color name="color_grey_e">#eee</color>
+    <color name="color_dark_gray">#A9A9A9</color>
+    <color name="color_gold">#FFD700</color>
+
+</resources>

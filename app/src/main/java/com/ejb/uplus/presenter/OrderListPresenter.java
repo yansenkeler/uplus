@@ -1,0 +1,31 @@
+package com.ejb.uplus.presenter;
+
+import com.cl.core.MVPFrame.BasePresenter;
+import com.ejb.uplus.bean.Order;
+import com.ejb.uplus.contract.OrderListContract;
+import com.ejb.uplus.model.OrderListModel;
+import com.ejb.uplus.view.OrderListActivity;
+
+import java.util.ArrayList;
+
+/**
+ * Created by John on 10/26/2016.
+ */
+
+public class OrderListPresenter extends BasePresenter<OrderListContract.IView> implements OrderListContract.IPresenter
+{
+
+    @Override
+    public void getOrderList() {
+        ArrayList<Order> orders = new OrderListModel().getOrderListData();
+        getIView().refreshList(orders);
+    }
+
+    @Override
+    public void getLoadMoreData()
+    {
+        ArrayList<Order> orders = new OrderListModel().getLoadMoreData();
+        getIView().refreshList(orders);
+        getIView().stopLoad();
+    }
+}

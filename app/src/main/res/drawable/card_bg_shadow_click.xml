@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:gravity="bottom">
+        <shape>
+            <size
+                android:height="1dp"/>
+            <padding
+                android:bottom="1dp"/>
+            <gradient
+                android:endColor="#ddd"
+                android:startColor="#ddd"/>
+            <corners android:radius="1dp"/>
+        </shape>
+    </item>
+    <item
+        android:gravity="bottom">
+        <selector>
+            <item android:drawable="@drawable/btn_normal_bg_hover" android:state_pressed="true"/>
+            <item android:drawable="@drawable/btn_normal_bg_hover" android:state_checked="true"/>
+            <item android:drawable="@drawable/btn_bormal_bg_normal" />
+        </selector>
+    </item>
+</layer-list>

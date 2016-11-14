@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#eee">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp">
+
+        <LinearLayout
+            android:id="@+id/refreshTextLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginRight="-10dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/refreshTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="下拉刷新"
+                android:textSize="12sp"
+                android:textColor="#333"
+                android:textStyle="bold"/>
+
+            <!--<TextView-->
+                <!--android:id="@+id/refreshTime"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="上次更新时间:" />-->
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:layout_toLeftOf="@id/refreshTextLayout">
+
+            <ImageView
+                android:id="@+id/refreshArrowImg"
+                android:layout_width="18dp"
+                android:layout_height="40dp"
+                android:src="@mipmap/arrow_down"
+                android:scaleType="center"/>
+
+            <ProgressBar
+                android:id="@+id/refreshProgress"
+                style="@style/myProgress"
+                android:layout_width="@dimen/progress_image_size"
+                android:layout_height="@dimen/progress_image_size" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+</LinearLayout>

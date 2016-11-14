@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">UPLUS</string>
+    <string name="home">首页</string>
+    <string name="toolbox">工具箱</string>
+    <string name="person_center">个人中心</string>
+    <string name="buy_bus">买车</string>
+    <string name="lease_bus">租车</string>
+    <string name="charging_pile">充电桩</string>
+    <string name="instrument">说明</string>
+    <string name="login">登录</string>
+    <string name="order_detail">订单详情</string>
+    <string name="my_orders">我的订单</string>
+    <string name="register">注册</string>
+    <string name="personal_profile">个人资料</string>
+    <string name="mobile_number">手机号</string>
+    <string name="living_city">居住城市</string>
+    <string name="sex">性别</string>
+</resources>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools"
+          package="com.ejb.uplus">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        tools:replace="android:icon"
+        android:name=".UplusApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".view.HomeActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.SelledBusListActivity" />
+
+        <activity android:name=".view.SelledBusDetailActivity" />
+
+        <activity android:name=".view.RentedBusListActivity" />
+
+        <activity android:name=".view.RentedBusDetailActivity" />
+
+        <activity android:name=".view.LoginActivity" />
+
+        <activity android:name=".view.RegisterActivity" />
+
+        <activity android:name=".view.OrderListActivity" />
+
+        <activity android:name=".view.OrderDetailActivity" />
+
+        <activity android:name=".view.UserProfileActivity" />
+
+        <activity android:name=".view.PersonCenterActivity"/>
+
+        <activity android:name=".view.ConfirmOrderActivity" />
+
+        <activity android:name=".view.MessageListActivity" />
+
+        <activity android:name=".view.MessageDetailActivity" />
+
+        <activity android:name=".view.SettingsActivity" />
+
+        <activity android:name=".view.PayActivity" />
+
+        <activity android:name=".view.InstrumentActivity" />
+    </application>
+
+</manifest>

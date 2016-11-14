@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/color_grey_e">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/default_margin"
+                    android:layout_marginTop="@dimen/default_margin"
+                    android:layout_marginRight="@dimen/default_margin"
+                    android:textSize="12sp"
+                    android:textColor="@color/color_crimson"
+                    android:text="请仔细确认订单"/>
+
+                <com.dd.ShadowLayout
+                    android:layout_marginLeft="@dimen/default_margin"
+                    android:layout_marginRight="@dimen/default_margin"
+                    android:layout_marginTop="4dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:sl_shadowRadius="1dp"
+                    app:sl_shadowColor="#AA000000"
+                    app:sl_dx="1dp"
+                    app:sl_dy="1dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/default_margin"
+                        android:background="#fff">
+
+                        <com.makeramen.roundedimageview.RoundedImageView
+                            android:id="@+id/snapshot"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:src="@mipmap/mock_img_car"
+                            android:scaleType="centerCrop"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="8dp"
+                            app:riv_corner_radius="4dp"/>
+
+                        <TextView
+                            android:id="@+id/name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@id/snapshot"
+                            android:textSize="16sp"
+                            android:textColor="#333"
+                            android:text="丰田普瑞达"/>
+
+                        <TextView
+                            android:id="@+id/params"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@id/snapshot"
+                            android:textSize="12sp"
+                            android:textColor="#555"
+                            android:layout_below="@id/name"
+                            android:text="五档四级"/>
+
+                        <TextView
+                            android:id="@+id/address"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="12sp"
+                            android:textColor="#555"
+                            android:layout_toRightOf="@id/snapshot"
+                            android:layout_alignParentBottom="true"
+                            android:text="张家港市杨舍镇国泰东方广场1102"/>
+
+                        <TextView
+                            android:id="@+id/tel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="16sp"
+                            android:textColor="@color/color_deep_sky_blue"
+                            android:layout_alignParentRight="true"
+                            android:text="15665487458"/>
+                    </RelativeLayout>
+                </com.dd.ShadowLayout>
+
+                <com.dd.ShadowLayout
+                    android:layout_marginLeft="@dimen/default_margin"
+                    android:layout_marginTop="@dimen/default_margin"
+                    android:layout_marginRight="@dimen/default_margin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:sl_shadowRadius="1dp"
+                    app:sl_shadowColor="#AA000000"
+                    app:sl_dx="1dp"
+                    app:sl_dy="1dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:background="#fff">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                    </RelativeLayout>
+                </com.dd.ShadowLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="#fff"
+            >
+
+            <TextView
+                android:id="@+id/confirm_order_btn"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height_bottom_btn"
+                android:layout_margin="@dimen/default_margin"
+                android:gravity="center"
+                android:background="@drawable/btn_deep_sky_blue"
+                android:textColor="#fff"
+                android:clickable="true"
+                android:text="确认"/>
+
+        </FrameLayout>
+    </FrameLayout>
+
+</LinearLayout>

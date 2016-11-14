@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView android:id="@+id/register"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingTop="4dp"
+    android:paddingBottom="4dp"
+    android:paddingLeft="12dp"
+    android:paddingStart="12dp"
+    android:paddingRight="12dp"
+    android:paddingEnd="12dp"
+    android:textSize="12sp"
+    android:textColor="#555"
+    android:background="@drawable/btn_bg_bar"
+    android:layout_alignParentRight="true"
+    android:layout_alignParentEnd="true"
+    android:layout_centerVertical="true"
+    android:text="注册"
+    xmlns:android="http://schemas.android.com/apk/res/android" />

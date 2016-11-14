@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@mipmap/person_center_top_bg">
+
+        <FrameLayout
+            android:id="@+id/unlogin_frame"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/login_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="8dp"
+                android:background="@drawable/btn_bg_transparent"
+                android:clickable="true"
+                android:textSize="12sp"
+                android:textColor="#555"
+                android:text="登录/注册"/>
+        </FrameLayout>
+
+        <RelativeLayout
+            android:id="@+id/login_frame"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/default_margin">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/avatar"
+                android:layout_width="?attr/actionBarSize"
+                android:layout_height="?attr/actionBarSize"
+                android:src="@mipmap/default_avatar"
+                android:layout_centerVertical="true"
+                app:civ_border_width="1dp"
+                app:civ_border_color="#eee"/>
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#fff"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="@dimen/default_margin"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="@dimen/default_margin"
+                android:layout_toRightOf="@id/avatar"
+                android:layout_toEndOf="@id/avatar"
+                android:textSize="16sp"/>
+
+            <ImageView
+                android:layout_width="@dimen/person_center_image_size"
+                android:layout_height="@dimen/person_center_image_size"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:src="@mipmap/right_arrow_icon"/>
+        </RelativeLayout>
+
+    </FrameLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="8dp"
+        android:background="#ddd"/>
+
+    <RelativeLayout
+        android:id="@+id/all_order_btn"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:padding="@dimen/default_margin"
+        android:clickable="true"
+        android:background="@drawable/card_bg_shadow_click">
+
+        <ImageView
+            android:id="@+id/all_order_icon"
+            android:layout_width="@dimen/person_center_image_size"
+            android:layout_height="@dimen/person_center_image_size"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/all_order_icon"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/all_order_icon"
+            android:layout_marginLeft="@dimen/default_margin"
+            android:text="全部订单"/>
+
+        <ImageView
+            android:layout_width="@dimen/person_center_image_size"
+            android:layout_height="@dimen/person_center_image_size"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:src="@mipmap/right_arrow_icon"/>
+
+    </RelativeLayout>
+
+    <!--<TextView-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="1dp"-->
+    <!--android:background="#ddd"/>-->
+
+    <RelativeLayout
+        android:id="@+id/my_message_btn"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:padding="@dimen/default_margin"
+        android:clickable="true"
+        android:background="@drawable/card_bg_shadow_click">
+
+        <ImageView
+            android:id="@+id/my_message_icon"
+            android:layout_width="@dimen/person_center_image_size"
+            android:layout_height="@dimen/person_center_image_size"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/my_message_icon"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/my_message_icon"
+            android:layout_marginLeft="@dimen/default_margin"
+            android:text="我的消息"/>
+
+        <ImageView
+            android:layout_width="@dimen/person_center_image_size"
+            android:layout_height="@dimen/person_center_image_size"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:src="@mipmap/right_arrow_icon"/>
+
+    </RelativeLayout>
+
+    <!--<TextView-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="1dp"-->
+    <!--android:background="#ddd"/>-->
+
+    <RelativeLayout
+        android:id="@+id/settings_btn"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:padding="@dimen/default_margin"
+        android:clickable="true"
+        android:background="@drawable/card_bg_shadow_click">
+
+        <ImageView
+            android:id="@+id/settings_icon"
+            android:layout_width="@dimen/person_center_image_size"
+            android:layout_height="@dimen/person_center_image_size"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/settings_icon"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/settings_icon"
+            android:layout_marginLeft="@dimen/default_margin"
+            android:text="设置"/>
+
+        <ImageView
+            android:layout_width="@dimen/person_center_image_size"
+            android:layout_height="@dimen/person_center_image_size"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:src="@mipmap/right_arrow_icon"/>
+
+    </RelativeLayout>
+</LinearLayout>
