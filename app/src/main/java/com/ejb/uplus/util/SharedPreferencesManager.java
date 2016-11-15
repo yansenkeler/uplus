@@ -2,7 +2,6 @@ package com.ejb.uplus.util;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.os.Parcelable;
 
 /**
  * Created by John on 10/27/2016.

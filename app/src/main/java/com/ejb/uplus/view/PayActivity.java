@@ -3,10 +3,8 @@ package com.ejb.uplus.view;
 import android.os.Bundle;
 
 import com.cl.core.MVPFrame.BaseView;
-import com.cl.core.activity.BaseActivity;
 import com.ejb.uplus.R;
 import com.ejb.uplus.base.MultiStateActivity;
-import com.ejb.uplus.component.toolbar.TopBar;
 import com.ejb.uplus.contract.PayContract;
 import com.ejb.uplus.presenter.PayPresenter;
 

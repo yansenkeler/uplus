@@ -1,14 +1,10 @@
 package com.ejb.uplus.presenter;
 
-import android.util.Log;
-
 import com.cl.core.MVPFrame.BasePresenter;
 import com.cl.core.retrofit.ApiCallback;
 import com.cl.core.retrofit.AppClient;
 import com.ejb.uplus.api.ApiStore;
-import com.ejb.uplus.bean.LoginData;
 import com.ejb.uplus.bean.LoginReturnEntity;
-import com.ejb.uplus.bean.SimpleReturnEntity;
 import com.ejb.uplus.contract.LoginContract;
 import com.ejb.uplus.model.LoginModel;
 import com.ejb.uplus.view.LoginActivity;
@@ -17,7 +13,8 @@ import com.ejb.uplus.view.LoginActivity;
  * Created by John on 10/25/2016.
  */
 
-public class LoginPresenter extends BasePresenter<LoginContract.IView> implements LoginContract.IPresenter
+public class LoginPresenter extends BasePresenter<LoginContract.IView> implements LoginContract
+        .IPresenter
 {
 
     @Override
@@ -26,27 +23,28 @@ public class LoginPresenter extends BasePresenter<LoginContract.IView> implement
         String mobile = getIView().getMobileInputValue();
         String password = getIView().getPasswordInputValue();
         ApiStore apiStore = AppClient.retrofit(ApiStore.BASE_URL).create(ApiStore.class);
-        addSubscription(apiStore.login(mobile, password), new ApiCallback<LoginReturnEntity>(){
+        addSubscription(apiStore.login(mobile, password), new ApiCallback<LoginReturnEntity>()
+        {
             @Override
             public void onSuccess(LoginReturnEntity loginReturnEntity)
             {
-                if (loginReturnEntity.getRet()==200)
+                if (loginReturnEntity.getRet() == 200)
                 {
                     String token = loginReturnEntity.getData().getToken();
                     new LoginModel().setLogin(true);
                     new LoginModel().putLoginToken(token);
-                    ((LoginActivity)getIView()).showToast("登录成功");
-                    ((LoginActivity)getIView()).finish();
-                }else
+                    ((LoginActivity) getIView()).showToast("登录成功");
+                    ((LoginActivity) getIView()).finish();
+                } else
                 {
-                    ((LoginActivity)getIView()).showToast(loginReturnEntity.getMsg());
+                    ((LoginActivity) getIView()).showToast(loginReturnEntity.getMsg());
                 }
             }
 
             @Override
             public void onFailure(String s)
             {
-                ((LoginActivity)getIView()).showToast(s);
+                ((LoginActivity) getIView()).showToast(s);
             }
 
             @Override
@@ -63,7 +61,7 @@ public class LoginPresenter extends BasePresenter<LoginContract.IView> implement
         if (validateMobile(mobile) && validatePassword(password))
         {
             getIView().clickableLoginBtn();
-        }else
+        } else
         {
             getIView().unclickableLoginBtn();
         }
@@ -78,6 +76,6 @@ public class LoginPresenter extends BasePresenter<LoginContract.IView> implement
     @Override
     public boolean validatePassword(String password)
     {
-        return password.length()>0;
+        return password.length() > 0;
     }
 }

@@ -2,7 +2,6 @@ package com.ejb.uplus.presenter;
 
 import com.cl.core.MVPFrame.BasePresenter;
 import com.ejb.uplus.contract.ConfirmOrderContract;
-import com.ejb.uplus.model.ConfirmOrderModel;
 
 
 /**

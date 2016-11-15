@@ -1,21 +1,16 @@
 package com.ejb.uplus.view;
 
-import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.cl.core.MVPFrame.BaseView;
-import com.cl.core.activity.BaseActivity;
 import com.ejb.uplus.R;
 import com.ejb.uplus.base.MultiStateActivity;
-import com.ejb.uplus.component.toolbar.TopBar;
 import com.ejb.uplus.contract.LoginContract;
 import com.ejb.uplus.presenter.LoginPresenter;
 import com.ejb.uplus.util.ActivityUtil;

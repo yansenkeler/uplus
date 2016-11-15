@@ -14,7 +14,6 @@ import com.daimajia.slider.library.SliderTypes.TextSliderView;
 import com.ejb.uplus.R;
 import com.ejb.uplus.base.MultiStateActivity;
 import com.ejb.uplus.component.other.MultiStateView;
-import com.ejb.uplus.component.toolbar.TopBar;
 import com.ejb.uplus.contract.HomeContract;
 import com.ejb.uplus.presenter.HomePresenter;
 import com.ejb.uplus.util.ActivityUtil;

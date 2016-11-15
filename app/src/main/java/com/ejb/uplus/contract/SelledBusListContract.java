@@ -1,8 +1,5 @@
 package com.ejb.uplus.contract;
 
-import android.app.Activity;
-import android.os.Bundle;
-
 import com.cl.core.MVPFrame.BaseView;
 import com.ejb.uplus.bean.SelledBus;
 

@@ -4,7 +4,6 @@ import com.cl.core.MVPFrame.BasePresenter;
 import com.ejb.uplus.bean.Order;
 import com.ejb.uplus.contract.OrderListContract;
 import com.ejb.uplus.model.OrderListModel;
-import com.ejb.uplus.view.OrderListActivity;
 
 import java.util.ArrayList;
 

@@ -44,7 +44,7 @@ public class CityPicker implements OptionsPickerView.OnOptionsSelectListener
 
     private void init()
     {
-        pickerView = new OptionsPickerView<String>(context);
+        pickerView = new OptionsPickerView<>(context);
         String parseResult = ResUtil.parseJsonFile(context, "areas.json");
         parseJsonToList(parseResult);
         pickerView.setPicker(data1, data2, data3, true);
@@ -54,7 +54,6 @@ public class CityPicker implements OptionsPickerView.OnOptionsSelectListener
 
     /**
      * 把json字符串解析成ArrayList
-     * @param str
      */
     private void parseJsonToList(String str)
     {

@@ -3,7 +3,6 @@ package com.ejb.uplus.presenter;
 import com.cl.core.MVPFrame.BasePresenter;
 import com.ejb.uplus.contract.PersonCenterContract;
 import com.ejb.uplus.model.PersonCenterModel;
-import com.ejb.uplus.view.PersonCenterActivity;
 
 /**
  * Created by John on 11/8/2016.

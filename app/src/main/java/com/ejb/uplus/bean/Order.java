@@ -1,7 +1,6 @@
 package com.ejb.uplus.bean;
 
 import java.util.Date;
-import java.util.UUID;
 
 /**
  * Created by John on 10/26/2016.

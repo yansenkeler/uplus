@@ -91,12 +91,7 @@ public class RentedBusListActivity extends MultiStateActivity<RentedBusListPrese
 
     @Override
     public void onRefresh() {
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                mPresenter.getRefreshData();
-            }
-        }, 2000);
+        new Handler().postDelayed(() -> mPresenter.getRefreshData(), 2000);
     }
 
     @Override

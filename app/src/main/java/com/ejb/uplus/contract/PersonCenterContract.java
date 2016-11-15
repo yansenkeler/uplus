@@ -1,7 +1,5 @@
 package com.ejb.uplus.contract;
 
-import android.view.View;
-
 import com.cl.core.MVPFrame.BaseView;
 
 /**

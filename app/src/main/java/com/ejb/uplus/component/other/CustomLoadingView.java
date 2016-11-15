@@ -2,7 +2,6 @@ package com.ejb.uplus.component.other;
 
 import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Color;
 import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.view.View;
@@ -12,7 +11,7 @@ import android.view.animation.RotateAnimation;
 import com.ejb.uplus.R;
 
 /**
- * Created by lumingmin on 16/6/20.
+ * Created by qianyx on 16/6/20.
  */
 
 public class CustomLoadingView extends View {

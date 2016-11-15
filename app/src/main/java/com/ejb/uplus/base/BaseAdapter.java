@@ -21,7 +21,7 @@ public abstract class BaseAdapter<T> extends android.widget.BaseAdapter
 
     public BaseAdapter(Context ctx)
     {
-        init(ctx, new ArrayList<T>());
+        init(ctx, new ArrayList<>());
     }
 
     public BaseAdapter(Context ctx, List<T> list)

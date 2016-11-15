@@ -12,7 +12,10 @@
     <string name="my_orders">我的订单</string>
     <string name="register">注册</string>
     <string name="personal_profile">个人资料</string>
-    <string name="mobile_number">手机号</string>
+    <string name="mobile_number">手机号(不可修改)</string>
     <string name="living_city">居住城市</string>
     <string name="sex">性别</string>
+    <string name="button_allow">允许</string>
+    <string name="button_deny">拒绝</string>
+    <string name="for_sell_buses">待售车辆</string>
 </resources>

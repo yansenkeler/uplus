@@ -1,12 +1,7 @@
 package com.ejb.uplus.adapter;
 
 import android.content.Context;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
@@ -15,7 +10,6 @@ import com.ejb.uplus.base.BaseAdapter;
 import com.ejb.uplus.bean.SelledBus;
 import com.makeramen.roundedimageview.RoundedImageView;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**

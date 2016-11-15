@@ -2,15 +2,12 @@ package com.ejb.uplus.adapter;
 
 import android.content.Context;
 import android.view.View;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
 import com.ejb.uplus.R;
 import com.ejb.uplus.base.BaseAdapter;
 import com.ejb.uplus.bean.Message;
 import com.ejb.uplus.util.DateUtil;
-import com.makeramen.roundedimageview.RoundedImageView;
 
 import java.util.List;
 

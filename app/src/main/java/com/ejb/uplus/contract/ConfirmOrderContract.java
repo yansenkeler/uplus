@@ -2,8 +2,6 @@ package com.ejb.uplus.contract;
 
 import com.cl.core.MVPFrame.BaseView;
 
-import java.util.ArrayList;
-
 /**
  * Created by John on 10/31/2016.
  */

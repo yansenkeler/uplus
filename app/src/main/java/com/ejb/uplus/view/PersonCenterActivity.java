@@ -2,7 +2,6 @@ package com.ejb.uplus.view;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.RelativeLayout;
@@ -11,7 +10,6 @@ import android.widget.TextView;
 import com.cl.core.MVPFrame.BaseView;
 import com.ejb.uplus.R;
 import com.ejb.uplus.base.MultiStateActivity;
-import com.ejb.uplus.component.toolbar.TopBar;
 import com.ejb.uplus.contract.PersonCenterContract;
 import com.ejb.uplus.presenter.PersonCenterPresenter;
 import com.ejb.uplus.util.ActivityUtil;
@@ -101,7 +99,7 @@ public class PersonCenterActivity extends MultiStateActivity<PersonCenterPresent
     @Override
     public void initPage()
     {
-        setTopBarTitle("个人中心");
+        setTopBarTitle(getResources().getString(R.string.person_center));
     }
 
     @Override

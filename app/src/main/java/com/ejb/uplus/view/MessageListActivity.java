@@ -1,25 +1,21 @@
 package com.ejb.uplus.view;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.cl.core.MVPFrame.BaseView;
-import com.cl.core.activity.BaseActivity;
 import com.ejb.uplus.R;
 import com.ejb.uplus.adapter.MessageListAdapter;
 import com.ejb.uplus.base.MultiStateActivity;
 import com.ejb.uplus.bean.Message;
-import com.ejb.uplus.component.toolbar.TopBar;
 import com.ejb.uplus.contract.MessageListContract;
 import com.ejb.uplus.presenter.MessageListPresenter;
 import com.ejb.uplus.util.ActivityUtil;
 import com.ejb.uplus.util.DateUtil;
 
 import java.util.ArrayList;
-import java.util.Date;
 
 /**
  * Created by John on 11/1/2016.

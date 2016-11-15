@@ -1,25 +1,12 @@
 package com.ejb.uplus.view;
 
 import android.os.Bundle;
-import android.util.Log;
-import android.webkit.WebView;
-import android.widget.ListView;
-import android.widget.Toast;
 
 import com.cl.core.MVPFrame.BaseView;
-import com.cl.core.activity.BaseActivity;
-import com.daimajia.slider.library.Animations.DescriptionAnimation;
-import com.daimajia.slider.library.SliderLayout;
-import com.daimajia.slider.library.SliderTypes.BaseSliderView;
-import com.daimajia.slider.library.SliderTypes.TextSliderView;
-import com.daimajia.slider.library.Tricks.ViewPagerEx;
 import com.ejb.uplus.R;
 import com.ejb.uplus.base.MultiStateActivity;
-import com.ejb.uplus.component.toolbar.TopBar;
 import com.ejb.uplus.contract.InstrumentContract;
 import com.ejb.uplus.presenter.InstrumentPresenter;
-
-import java.util.HashMap;
 
 /**
  * Created by John on 11/1/2016.

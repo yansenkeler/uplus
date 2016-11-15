@@ -67,36 +67,36 @@ public class SelledBusDetailActivity extends MultiStateActivity<SelledBusDetailP
         textValue.setBackgroundColor(getResources().getColor(R.color.color_table_value));
         textKey.setText(key);
         textValue.setText(value);
-        textKey.setPadding((int)DensityUtils.dp2px(this, 8),
-                (int)DensityUtils.dp2px(this, 8),
-                (int)DensityUtils.dp2px(this, 8),
-                (int)DensityUtils.dp2px(this, 8));
-        textValue.setPadding((int)DensityUtils.dp2px(this, 8),
-                (int)DensityUtils.dp2px(this, 8),
-                (int)DensityUtils.dp2px(this, 8),
-                (int)DensityUtils.dp2px(this, 8));
+        textKey.setPadding(DensityUtils.dp2px(this, 8),
+                DensityUtils.dp2px(this, 8),
+                DensityUtils.dp2px(this, 8),
+                DensityUtils.dp2px(this, 8));
+        textValue.setPadding(DensityUtils.dp2px(this, 8),
+                DensityUtils.dp2px(this, 8),
+                DensityUtils.dp2px(this, 8),
+                DensityUtils.dp2px(this, 8));
         textKey.setTextSize(12);
         textValue.setTextSize(12);
         if (index==0)
         {
-            keyParams.setMargins((int)getResources().getDimensionPixelSize(R.dimen.dimen_table_border),
-                    (int)getResources().getDimensionPixelSize(R.dimen.dimen_table_border),
-                    (int)getResources().getDimensionPixelSize(R.dimen.dimen_table_border),
-                    (int)getResources().getDimensionPixelSize(R.dimen.dimen_table_border));
+            keyParams.setMargins(getResources().getDimensionPixelSize(R.dimen.dimen_table_border),
+                    getResources().getDimensionPixelSize(R.dimen.dimen_table_border),
+                    getResources().getDimensionPixelSize(R.dimen.dimen_table_border),
+                    getResources().getDimensionPixelSize(R.dimen.dimen_table_border));
             valueParams.setMargins(0,
-                    (int)getResources().getDimensionPixelSize(R.dimen.dimen_table_border),
-                    (int)getResources().getDimensionPixelSize(R.dimen.dimen_table_border),
-                    (int)getResources().getDimensionPixelSize(R.dimen.dimen_table_border));
+                    getResources().getDimensionPixelSize(R.dimen.dimen_table_border),
+                    getResources().getDimensionPixelSize(R.dimen.dimen_table_border),
+                    getResources().getDimensionPixelSize(R.dimen.dimen_table_border));
         }else
         {
-            keyParams.setMargins((int)getResources().getDimensionPixelSize(R.dimen.dimen_table_border),
+            keyParams.setMargins(getResources().getDimensionPixelSize(R.dimen.dimen_table_border),
                     0,
-                    (int)getResources().getDimensionPixelSize(R.dimen.dimen_table_border),
-                    (int)getResources().getDimensionPixelSize(R.dimen.dimen_table_border));
+                    getResources().getDimensionPixelSize(R.dimen.dimen_table_border),
+                    getResources().getDimensionPixelSize(R.dimen.dimen_table_border));
             valueParams.setMargins(0,
                     0,
-                    (int)getResources().getDimensionPixelSize(R.dimen.dimen_table_border),
-                    (int)getResources().getDimensionPixelSize(R.dimen.dimen_table_border));
+                    getResources().getDimensionPixelSize(R.dimen.dimen_table_border),
+                    getResources().getDimensionPixelSize(R.dimen.dimen_table_border));
         }
         textKey.setLayoutParams(keyParams);
         textValue.setLayoutParams(valueParams);
@@ -108,7 +108,7 @@ public class SelledBusDetailActivity extends MultiStateActivity<SelledBusDetailP
     @Override
     public void initPage() {
         mPresenter.getSelledBusDetail();
-        setTopBarTitle("待售车辆");
+        setTopBarTitle(getResources().getString(R.string.for_sell_buses));
     }
 
     @Override

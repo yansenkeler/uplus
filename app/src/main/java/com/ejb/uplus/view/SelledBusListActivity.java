@@ -105,22 +105,12 @@ public class SelledBusListActivity extends MultiStateActivity<SelledBusListPrese
 
     @Override
     public void onRefresh() {
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                mPresenter.getRefreshData();
-            }
-        }, 2000);
+        new Handler().postDelayed(() -> mPresenter.getRefreshData(), 2000);
     }
 
     @Override
     public void onLoadMore() {
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                mPresenter.getLoadData();
-            }
-        }, 2000);
+        new Handler().postDelayed(() -> mPresenter.getLoadData(), 2000);
     }
 
     @Override

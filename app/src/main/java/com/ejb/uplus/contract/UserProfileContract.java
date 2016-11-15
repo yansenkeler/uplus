@@ -1,11 +1,5 @@
 package com.ejb.uplus.contract;
 
-import android.app.Activity;
-import android.content.Intent;
-import android.graphics.Bitmap;
-import android.net.Uri;
-import android.os.Bundle;
-
 import com.cl.core.MVPFrame.BaseView;
 
 /**
@@ -21,18 +15,11 @@ public class UserProfileContract
         void setListeners();
         void initPage();
         void logout();
-        void showShortToast(String text);
 
-        void openPicturePicker();
-        void closePicturePicker();
         void openCamera();
-        void openCamera(Uri uri);
         void openAlbum();
-        void setAvatarUri(Uri uri);
-        void setAvatarBitmap(Bitmap bitmap);
 
         void openSexSelectDialog();
-        void closeSexSelectDialog();
 
         void openCityPicker(int p, int c, int d);
         void closeCityPicker();
@@ -40,7 +27,6 @@ public class UserProfileContract
         boolean isCityPickerShown();
 
         String getSexText();
-        void setSexText(String text);
         void setMaleIcon(int res);
         void setFemaleIcon(int res);
     }
@@ -48,7 +34,9 @@ public class UserProfileContract
     public interface IPresenter
     {
         void getUserProfile();
-        void onActivityResultAction(int requestCode, int resultCode, Intent data);
         void onDestroy();
+        void dealSexSelectBtnClick();
+        void dealCitySelectBtnClick();
+        void dealCitySelected(String t1, String t2, String t3, int i1, int i2, int i3);
     }
 }

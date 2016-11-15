@@ -5,11 +5,9 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import com.cl.core.MVPFrame.BaseView;
-import com.cl.core.activity.BaseActivity;
 import com.ejb.uplus.R;
 import com.ejb.uplus.base.MultiStateActivity;
 import com.ejb.uplus.bean.Message;
-import com.ejb.uplus.component.toolbar.TopBar;
 import com.ejb.uplus.contract.MessageDetailContract;
 import com.ejb.uplus.presenter.MessageDetailPresenter;
 import com.ejb.uplus.util.DateUtil;

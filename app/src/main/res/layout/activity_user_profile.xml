@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -41,7 +42,7 @@
                 android:layout_height="?attr/actionBarSize"
                 android:padding="@dimen/default_margin"
                 android:background="@drawable/card_bg_shadow_click"
-                android:clickable="true">
+                android:clickable="false">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -51,24 +52,25 @@
                     android:textSize="12sp"
                     android:textColor="#333"/>
 
-                <ImageView
-                    android:id="@+id/arrow1"
-                    android:layout_width="@dimen/person_center_image_size"
-                    android:layout_height="@dimen/person_center_image_size"
-                    android:layout_centerVertical="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignParentEnd="true"
-                    android:src="@mipmap/right_arrow_icon"/>
+                <!--<ImageView-->
+                    <!--android:visibility="gone"-->
+                    <!--android:id="@+id/arrow1"-->
+                    <!--android:layout_width="@dimen/person_center_image_size"-->
+                    <!--android:layout_height="@dimen/person_center_image_size"-->
+                    <!--android:layout_centerVertical="true"-->
+                    <!--android:layout_alignParentRight="true"-->
+                    <!--android:layout_alignParentEnd="true"-->
+                    <!--android:src="@mipmap/right_arrow_icon"/>-->
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:layout_toLeftOf="@id/arrow1"
+                    android:layout_alignParentRight="true"
                     android:textSize="12sp"
-                    android:textColor="#999"
+                    android:textColor="#bbb"
                     android:layout_marginRight="8dp"
-                    android:text="请填写"
+                    android:text="11111111111"
                     android:id="@+id/mobile_text" />
 
             </RelativeLayout>
@@ -96,7 +98,8 @@
                     android:layout_centerVertical="true"
                     android:layout_alignParentRight="true"
                     android:layout_alignParentEnd="true"
-                    android:src="@mipmap/right_arrow_icon"/>
+                    android:src="@mipmap/right_arrow_icon"
+                    tools:ignore="ContentDescription"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -134,7 +137,8 @@
                     android:layout_centerVertical="true"
                     android:layout_alignParentRight="true"
                     android:layout_alignParentEnd="true"
-                    android:src="@mipmap/right_arrow_icon"/>
+                    android:src="@mipmap/right_arrow_icon"
+                    tools:ignore="ContentDescription"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -178,7 +182,8 @@
                     android:layout_centerVertical="true"
                     android:layout_alignParentRight="true"
                     android:layout_alignParentEnd="true"
-                    android:src="@mipmap/right_arrow_icon"/>
+                    android:src="@mipmap/right_arrow_icon"
+                    tools:ignore="ContentDescription"/>
 
                 <TextView
                     android:layout_width="wrap_content"

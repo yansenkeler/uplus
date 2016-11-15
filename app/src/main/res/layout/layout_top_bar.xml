@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="@dimen/barSize"
     android:background="#fff"
@@ -11,7 +12,8 @@
         android:layout_width="@dimen/icon_size"
         android:layout_height="@dimen/icon_size"
         android:layout_centerVertical="true"
-        android:src="@drawable/back_icon"/>
+        android:src="@drawable/back_icon"
+        tools:ignore="ContentDescription"/>
 
     <TextView
         android:id="@+id/top_bar_title"

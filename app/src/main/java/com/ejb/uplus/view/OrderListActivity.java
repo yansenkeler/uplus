@@ -1,29 +1,22 @@
 package com.ejb.uplus.view;
 
-import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ImageView;
 
 import com.cl.core.MVPFrame.BaseView;
-import com.cl.core.activity.BaseActivity;
 import com.ejb.uplus.R;
 import com.ejb.uplus.adapter.OrderListAdapter;
 import com.ejb.uplus.base.MultiStateActivity;
 import com.ejb.uplus.bean.Order;
 import com.ejb.uplus.component.RalmListView.LoadMoreListView;
 import com.ejb.uplus.component.RalmListView.OnLoadMoreListener;
-import com.ejb.uplus.component.toolbar.TopBar;
 import com.ejb.uplus.contract.OrderListContract;
 import com.ejb.uplus.presenter.OrderListPresenter;
 import com.ejb.uplus.util.ActivityUtil;
 
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.Random;
 
 /**
  * Created by John on 10/26/2016.
@@ -104,12 +97,7 @@ public class OrderListActivity extends MultiStateActivity<OrderListPresenter> im
 
     @Override
     public void onLoadMore() {
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                mPresenter.getLoadMoreData();
-            }
-        }, 2000);
+        new Handler().postDelayed(() -> mPresenter.getLoadMoreData(), 2000);
     }
 
     @Override

@@ -1,7 +1,6 @@
 package com.ejb.uplus.presenter;
 
 import com.cl.core.MVPFrame.BasePresenter;
-import com.cl.core.MVPFrame.BaseView;
 import com.ejb.uplus.contract.InstrumentContract;
 
 /**

@@ -1,13 +1,16 @@
 package com.ejb.uplus.view;
 
+import android.Manifest;
+import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Bitmap;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Process;
 import android.provider.MediaStore;
+import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,7 +26,7 @@ import com.ejb.uplus.component.pickers.CityPicker;
 import com.ejb.uplus.contract.UserProfileContract;
 import com.ejb.uplus.presenter.UserProfilePresenter;
 import com.ejb.uplus.util.FileUtil;
-import com.ejb.uplus.util.OsUtil;
+import com.zookey.universalpreferences.UniversalPreferences;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -31,10 +34,11 @@ import de.hdodenhof.circleimageview.CircleImageView;
  * Created by John on 10/26/2016.
  */
 
-public class UserProfileActivity extends MultiStateActivity<UserProfilePresenter> implements UserProfileContract.IView, View.OnClickListener
+public class UserProfileActivity extends MultiStateActivity<UserProfilePresenter> implements UserProfileContract.IView, View.OnClickListener, CityPicker.OnCitySelectListener
 {
     public static final int REQUEST_CAMERA = 0;
     public static final int REQUEST_ALBUM = 1;
+    private static final int REQUEST_PERMISSION_CAMERA = 1;
     private CircleImageView avatar;
     private RelativeLayout mobileBtn, sexBtn, cityBtn, modifyPasswordBtn, logoutBtn;
     private TextView mobileText, sexText, cityText;
@@ -94,18 +98,17 @@ public class UserProfileActivity extends MultiStateActivity<UserProfilePresenter
     @Override
     public void setListeners()
     {
-        avatar.setOnClickListener(mPresenter);
-        mobileBtn.setOnClickListener(mPresenter);
-        sexBtn.setOnClickListener(mPresenter);
-        cityBtn.setOnClickListener(mPresenter);
-        modifyPasswordBtn.setOnClickListener(mPresenter);
-        logoutBtn.setOnClickListener(mPresenter);
-        selectCamera.setOnClickListener(mPresenter);
-        selectAlbum.setOnClickListener(mPresenter);
-        selectExit.setOnClickListener(mPresenter);
-        selectMale.setOnClickListener(mPresenter);
-        selectFemale.setOnClickListener(mPresenter);
-        cityPicker.setListener(mPresenter);
+        avatar.setOnClickListener(this);
+        sexBtn.setOnClickListener(this);
+        cityBtn.setOnClickListener(this);
+        modifyPasswordBtn.setOnClickListener(this);
+        logoutBtn.setOnClickListener(this);
+        selectCamera.setOnClickListener(this);
+        selectAlbum.setOnClickListener(this);
+        selectExit.setOnClickListener(this);
+        selectMale.setOnClickListener(this);
+        selectFemale.setOnClickListener(this);
+        cityPicker.setListener(this);
     }
 
     @Override
@@ -146,12 +149,6 @@ public class UserProfileActivity extends MultiStateActivity<UserProfilePresenter
     }
 
     @Override
-    public void closeSexSelectDialog()
-    {
-        sexSelectDialog.dismiss();
-    }
-
-    @Override
     public void openCityPicker(int p, int c, int d)
     {
         cityPicker.show(p, c, d);
@@ -179,12 +176,6 @@ public class UserProfileActivity extends MultiStateActivity<UserProfilePresenter
     public String getSexText()
     {
         return sexText.getText().toString();
-    }
-
-    @Override
-    public void setSexText(String text)
-    {
-        sexText.setText(text);
     }
 
     @Override
@@ -226,14 +217,6 @@ public class UserProfileActivity extends MultiStateActivity<UserProfilePresenter
     }
 
     @Override
-    public void openCamera(Uri uri)
-    {
-        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        intent.putExtra(MediaStore.EXTRA_OUTPUT, uri);
-        startActivityForResult(intent, REQUEST_CAMERA);
-    }
-
-    @Override
     public void openAlbum()
     {
         Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
@@ -241,46 +224,69 @@ public class UserProfileActivity extends MultiStateActivity<UserProfilePresenter
     }
 
     @Override
-    public void setAvatarUri(Uri uri)
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults)
     {
-        avatar.setImageURI(uri);
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        doNext(requestCode, grantResults);
     }
 
-    @Override
-    public void setAvatarBitmap(Bitmap bitmap)
+    private void doNext(int requestCode, int[] grantResults)
     {
-        avatar.setImageBitmap(bitmap);
+        if (requestCode == REQUEST_PERMISSION_CAMERA)
+        {
+            if (grantResults[0] == PackageManager.PERMISSION_GRANTED)
+            {
+                openCamera();
+            } else
+            {
+                showToast("调用相机权限拒绝");
+            }
+        }
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data)
     {
         super.onActivityResult(requestCode, resultCode, data);
-        mPresenter.onActivityResultAction(requestCode, resultCode, data);
-//        switch (requestCode)
-//        {
-//            case REQUEST_CAMERA:
-//                if (resultCode== Activity.RESULT_OK)
-//                {
-//                    Log.d("qianyx3", cameraUri==null?"null":"not null");
-//                    if (cameraUri!=null)
-//                    {
-//                        setAvatarUri(cameraUri);
-//                    }
-//                    else
-//                    {
-//                        showShortToast("拍照失败，未获取拍照图像");
-//                    }
-//                }
-//                else
-//                {
-//                    showShortToast("打开相机失败");
-//                }
-//                break;
-//            default:
-//                mPresenter.onActivityResultAction(requestCode, resultCode, data);
-//                break;
-//        }
+        switch (requestCode)
+        {
+            case UserProfileActivity.REQUEST_CAMERA:
+                if (resultCode== Activity.RESULT_OK)
+                {
+                    if (cameraUri!=null)
+                    {
+                        avatar.setImageURI(cameraUri);
+                    }else
+                    {
+                        showToast("拍照失败，未获取拍照图像");
+                    }
+                }
+                else
+                {
+                    showToast("打开相机失败");
+                }
+                break;
+            case UserProfileActivity.REQUEST_ALBUM:
+                if (resultCode==Activity.RESULT_OK)
+                {
+                    if (data!=null)
+                    {
+                        Uri uri = data.getData();
+                        avatar.setImageURI(uri);
+                    }
+                    else
+                    {
+                        showToast("相册图片返回失败");
+                    }
+                }
+                else
+                {
+                    showToast("打开系统相册失败");
+                }
+                break;
+            default:
+                break;
+        }
     }
 
     @Override
@@ -291,28 +297,9 @@ public class UserProfileActivity extends MultiStateActivity<UserProfilePresenter
     }
 
     @Override
-    public void showShortToast(String text)
-    {
-        Toast.makeText(mContext, text, Toast.LENGTH_SHORT).show();
-    }
-
-    @Override
-    public void openPicturePicker()
-    {
-        pictureSelectTypeDialog.show();
-    }
-
-    @Override
-    public void closePicturePicker()
-    {
-        pictureSelectTypeDialog.dismiss();
-    }
-
-    @Override
     protected void onDestroy()
     {
         super.onDestroy();
-        Log.d("qianyx destroy", "activity destroy-----"+OsUtil.getCurProcessName(mContext)+"("+ Process.myPid()+")");
         cityPicker.destroy();
         mPresenter.onDestroy();
     }
@@ -322,13 +309,56 @@ public class UserProfileActivity extends MultiStateActivity<UserProfilePresenter
     {
         switch (view.getId())
         {
+            case R.id.avatar:
+                pictureSelectTypeDialog.show();
+                break;
             case R.id.select_camera:
                 cameraUri = FileUtil.getCaptureSavedUri();
                 pictureSelectTypeDialog.dismiss();
-                openCamera();
+                if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED)
+                {
+                    ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA}, REQUEST_PERMISSION_CAMERA);
+                }else
+                {
+                    openCamera();
+                }
+                break;
+            case R.id.select_album:
+                pictureSelectTypeDialog.dismiss();
+                openAlbum();
+                break;
+            case R.id.select_exit:
+                pictureSelectTypeDialog.dismiss();
+                break;
+            case R.id.sex_btn:
+                mPresenter.dealSexSelectBtnClick();
+                break;
+            case R.id.select_male_btn:
+                sexText.setText("男");
+                sexSelectDialog.dismiss();
+                break;
+            case R.id.select_female_btn:
+                sexText.setText("女");
+                sexSelectDialog.dismiss();
+                break;
+            case R.id.city_btn:
+                mPresenter.dealCitySelectBtnClick();
+                break;
+            case R.id.modify_password_btn:
+                break;
+            case R.id.logout_btn:
+                UniversalPreferences.getInstance().put("is_login", false);
+                UniversalPreferences.getInstance().put("login_token", "");
+                logout();
                 break;
             default:
                 break;
         }
+    }
+
+    @Override
+    public void onSelect(String t1, String t2, String t3, int i1, int i2, int i3)
+    {
+        mPresenter.dealCitySelected(t1, t2, t3, i1, i2, i3);
     }
 }

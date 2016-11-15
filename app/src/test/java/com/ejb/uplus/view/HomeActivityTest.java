@@ -3,8 +3,6 @@ package com.ejb.uplus.view;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 /**
  * Created by John on 11/3/2016.
  */

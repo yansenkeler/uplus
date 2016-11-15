@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -30,7 +31,8 @@
             android:layout_toStartOf="@id/male_text"
             android:layout_marginRight="16dp"
             android:layout_marginEnd="16dp"
-            android:src="@mipmap/icon_male_normal"/>
+            android:src="@mipmap/icon_male_normal"
+            tools:ignore="ContentDescription"/>
 
     </RelativeLayout>
 
@@ -64,7 +66,8 @@
             android:layout_toStartOf="@id/female_text"
             android:layout_marginRight="16dp"
             android:layout_marginEnd="16dp"
-            android:src="@mipmap/icon_female_normal"/>
+            android:src="@mipmap/icon_female_normal"
+            tools:ignore="ContentDescription"/>
 
     </RelativeLayout>
 </LinearLayout>

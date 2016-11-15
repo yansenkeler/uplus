@@ -36,12 +36,7 @@ public class HomePresenter extends BasePresenter<HomeContract.IView> implements 
         }else {
             canExit = true;
             Toast.makeText(mContext, "再次点击返回退出应用", Toast.LENGTH_SHORT).show();
-            new Handler().postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    canExit = false;
-                }
-            }, 2000);
+            new Handler().postDelayed(() -> canExit = false, 2000);
         }
     }
 }
