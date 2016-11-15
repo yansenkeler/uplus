@@ -23,5 +23,7 @@ public class PersonCenterContract
     public interface IPresenter
     {
         void initLoginView();
+        boolean isLogin();
+        void setLogin(boolean login);
     }
 }

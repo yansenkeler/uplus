@@ -11,9 +11,11 @@ import com.cl.core.MVPFrame.BasePresenter;
 import com.ejb.uplus.R;
 import com.ejb.uplus.component.pickers.CityPicker;
 import com.ejb.uplus.contract.UserProfileContract;
+import com.ejb.uplus.model.UserProfileModel;
 import com.ejb.uplus.util.FileUtil;
 import com.ejb.uplus.util.OsUtil;
 import com.ejb.uplus.view.UserProfileActivity;
+import com.zookey.universalpreferences.UniversalPreferences;
 
 /**
  * Created by John on 10/26/2016.
@@ -89,13 +91,11 @@ public class UserProfilePresenter extends BasePresenter<UserProfileContract.IVie
         switch (view.getId())
         {
             case R.id.avatar:
-
 //                activity.openPicturePicker();
                 break;
             case R.id.select_camera:
                 cameraUri = FileUtil.getCaptureSavedUri();
                 getIView().closePicturePicker();
-                Log.d("qianyx1", cameraUri==null?"null":"not null-----"+OsUtil.getCurProcessName(mContext)+"("+ Process.myPid()+")");
                 getIView().openCamera(cameraUri);
                 break;
             case R.id.select_album:
@@ -144,6 +144,8 @@ public class UserProfilePresenter extends BasePresenter<UserProfileContract.IVie
             case R.id.modify_password_btn:
                 break;
             case R.id.logout_btn:
+                UniversalPreferences.getInstance().put("is_login", false);
+                UniversalPreferences.getInstance().put("login_token", "");
                 getIView().logout();
                 break;
             default:

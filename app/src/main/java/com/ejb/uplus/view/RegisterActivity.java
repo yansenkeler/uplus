@@ -145,14 +145,14 @@ public class RegisterActivity extends MultiStateActivity<RegisterPresenter> impl
     @Override
     public void enableRegisterBtn()
     {
-        mRegisterBtn.setEnabled(true);
+        mRegisterBtn.setClickable(true);
         mRegisterBtn.setBackgroundResource(R.drawable.btn_bg_accent);
     }
 
     @Override
     public void disableRegisterBtn()
     {
-        mRegisterBtn.setEnabled(false);
+        mRegisterBtn.setClickable(false);
         mRegisterBtn.setBackgroundResource(R.drawable.btn_bg_unclickable);
     }
 

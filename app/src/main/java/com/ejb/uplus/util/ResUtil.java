@@ -2,14 +2,8 @@ package com.ejb.uplus.util;
 
 import android.content.Context;
 import android.content.res.AssetManager;
-import android.graphics.Point;
-import android.support.annotation.Nullable;
 import android.util.DisplayMetrics;
 import android.view.WindowManager;
-
-
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.IOException;

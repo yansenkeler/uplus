@@ -18,7 +18,6 @@ import com.ejb.uplus.base.MultiStateActivity;
 import com.ejb.uplus.contract.SelledBusDetailContract;
 import com.ejb.uplus.presenter.SelledBusDetailPresenter;
 import com.ejb.uplus.util.ActivityUtil;
-import com.jude.rollviewpager.OnItemClickListener;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -29,7 +28,7 @@ import java.util.Set;
  * Created by John on 10/25/2016.
  */
 
-public class SelledBusDetailActivity extends MultiStateActivity<SelledBusDetailPresenter> implements SelledBusDetailContract.IView, View.OnClickListener, OnItemClickListener, BaseSliderView.OnSliderClickListener
+public class SelledBusDetailActivity extends MultiStateActivity<SelledBusDetailPresenter> implements SelledBusDetailContract.IView, View.OnClickListener, BaseSliderView.OnSliderClickListener
 {
     private static final long SLIDER_DURATION = 3000;
     private SliderLayout sliderLayout;
@@ -171,25 +170,6 @@ public class SelledBusDetailActivity extends MultiStateActivity<SelledBusDetailP
         switch (v.getId()){
             case R.id.tel:
                 ActivityUtil.jumpToDialNumber(this, tel.getText().toString());
-                break;
-            default:
-                break;
-        }
-    }
-
-    @Override
-    public void onItemClick(int position)
-    {
-        switch (position)
-        {
-            case 0:
-                Toast.makeText(mContext, "image 1 is clicked", Toast.LENGTH_SHORT).show();
-                break;
-            case 1:
-                Toast.makeText(mContext, "image 2 is clicked", Toast.LENGTH_SHORT).show();
-                break;
-            case 2:
-                Toast.makeText(mContext, "image 3 is clicked", Toast.LENGTH_SHORT).show();
                 break;
             default:
                 break;

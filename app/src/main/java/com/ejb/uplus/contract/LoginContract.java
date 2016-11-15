@@ -17,9 +17,17 @@ public class LoginContract {
         void initConfigers();
         void setListeners();
         void initPage();
+        void clickableLoginBtn();
+        void unclickableLoginBtn();
+        String getMobileInputValue();
+        String getPasswordInputValue();
+
     }
 
     public interface IPresenter{
         void login();
+        void validateLoginBtn(String mobile, String password);
+        boolean validateMobile(String mobile);
+        boolean validatePassword(String password);
     }
 }

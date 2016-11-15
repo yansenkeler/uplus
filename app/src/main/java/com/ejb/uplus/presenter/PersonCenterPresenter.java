@@ -15,7 +15,7 @@ public class PersonCenterPresenter extends BasePresenter<PersonCenterContract.IV
     @Override
     public void initLoginView()
     {
-        if (new PersonCenterModel().isLogin())
+        if (!new PersonCenterModel().isLogin())
         {
             getIView().setAvatarVisibility(false);
             getIView().setLoginBtnVisibility(true);
@@ -24,5 +24,17 @@ public class PersonCenterPresenter extends BasePresenter<PersonCenterContract.IV
             getIView().setAvatarVisibility(true);
             getIView().setLoginBtnVisibility(false);
         }
+    }
+
+    @Override
+    public boolean isLogin()
+    {
+        return new PersonCenterModel().isLogin();
+    }
+
+    @Override
+    public void setLogin(boolean login)
+    {
+        new PersonCenterModel().setLogin(login);
     }
 }

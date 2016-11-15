@@ -92,9 +92,15 @@ public class PersonCenterActivity extends MultiStateActivity<PersonCenterPresent
     }
 
     @Override
+    protected void onResume()
+    {
+        super.onResume();
+        mPresenter.initLoginView();
+    }
+
+    @Override
     public void initPage()
     {
-        mPresenter.initLoginView();
         setTopBarTitle("个人中心");
     }
 
@@ -103,10 +109,10 @@ public class PersonCenterActivity extends MultiStateActivity<PersonCenterPresent
     {
         if (isShown)
         {
-            unloginFrame.setVisibility(View.VISIBLE);
+            loginFrame.setVisibility(View.VISIBLE);
         }else
         {
-            unloginFrame.setVisibility(View.GONE);
+            loginFrame.setVisibility(View.GONE);
         }
     }
 
@@ -115,10 +121,10 @@ public class PersonCenterActivity extends MultiStateActivity<PersonCenterPresent
     {
         if (isShown)
         {
-            loginBtn.setVisibility(View.VISIBLE);
+            unloginFrame.setVisibility(View.VISIBLE);
         }else
         {
-            loginBtn.setVisibility(View.GONE);
+            unloginFrame.setVisibility(View.GONE);
         }
     }
 
@@ -146,7 +152,7 @@ public class PersonCenterActivity extends MultiStateActivity<PersonCenterPresent
                 ActivityUtil.goActivity(this, UserProfileActivity.class, new Bundle());
                 break;
             case R.id.all_order_btn:
-                if (true)
+                if (mPresenter.isLogin())
                 {
                     ActivityUtil.goActivity(this, OrderListActivity.class, new Bundle());
                 }else
@@ -155,7 +161,7 @@ public class PersonCenterActivity extends MultiStateActivity<PersonCenterPresent
                 }
                 break;
             case R.id.my_message_btn:
-                if (true)
+                if (mPresenter.isLogin())
                 {
                     ActivityUtil.goActivity(this, MessageListActivity.class, new Bundle());
                 }else
@@ -164,7 +170,7 @@ public class PersonCenterActivity extends MultiStateActivity<PersonCenterPresent
                 }
                 break;
             case R.id.settings_btn:
-                if (false)
+                if (mPresenter.isLogin())
                 {
                     ActivityUtil.goActivity(this, SettingsActivity.class, new Bundle());
                 }else

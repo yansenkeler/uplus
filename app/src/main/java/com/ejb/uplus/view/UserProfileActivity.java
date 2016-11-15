@@ -286,7 +286,8 @@ public class UserProfileActivity extends MultiStateActivity<UserProfilePresenter
     @Override
     public void logout()
     {
-
+        finish();
+        Toast.makeText(this, "退出登录", Toast.LENGTH_SHORT).show();
     }
 
     @Override
