@@ -15,8 +15,10 @@ import com.ejb.uplus.component.RalmListView.RefreshListView;
 import com.ejb.uplus.contract.RentedBusListContract;
 import com.ejb.uplus.presenter.RentedBusListPresenter;
 import com.ejb.uplus.util.ActivityUtil;
+import com.jaredrummler.materialspinner.MaterialSpinner;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * Created by John on 10/24/2016.
@@ -26,6 +28,9 @@ public class RentedBusListActivity extends MultiStateActivity<RentedBusListPrese
     private RefreshListView listView;
     private ArrayList<RentedBus> rentedBuses = new ArrayList<>();
     private RentedBusListAdapter rentedBusListAdapter;
+    private MaterialSpinner mMaterialSpinner1, mMaterialSpinner2;
+    private ArrayList<String> mSpinnerData1 = new ArrayList<>(Arrays.asList("选择品牌", "品牌一", "品牌二", "品牌三"));
+    private ArrayList<String> mSpinnerData2 = new ArrayList<>(Arrays.asList("选择车型", "大型车", "中型车", "小型车"));
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,8 +42,11 @@ public class RentedBusListActivity extends MultiStateActivity<RentedBusListPrese
     }
 
     @Override
-    public void initViews() {
+    public void initViews()
+    {
         listView = (RefreshListView)findViewById(R.id.list_view);
+        mMaterialSpinner1 = (MaterialSpinner) findViewById(R.id.spinner1);
+        mMaterialSpinner2 = (MaterialSpinner) findViewById(R.id.spinner2);
     }
 
     @Override
@@ -51,6 +59,8 @@ public class RentedBusListActivity extends MultiStateActivity<RentedBusListPrese
     public void initConfigers() {
         rentedBusListAdapter = new RentedBusListAdapter(mContext, rentedBuses);
         listView.setAdapter(rentedBusListAdapter);
+        mMaterialSpinner1.setItems(mSpinnerData1);
+        mMaterialSpinner2.setItems(mSpinnerData2);
     }
 
     @Override

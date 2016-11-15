@@ -1,5 +1,6 @@
 package com.ejb.uplus.view;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -15,8 +16,14 @@ import com.ejb.uplus.component.RalmListView.RefreshAndLoadMoreListView;
 import com.ejb.uplus.contract.SelledBusListContract;
 import com.ejb.uplus.presenter.SelledBusListPresenter;
 import com.ejb.uplus.util.ActivityUtil;
+import com.jaredrummler.materialspinner.MaterialSpinner;
+
+import org.angmarch.views.NiceSpinner;
+import org.angmarch.views.NiceSpinnerAdapter;
+import org.angmarch.views.NiceSpinnerBaseAdapter;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * Created by John on 10/24/2016.
@@ -27,6 +34,9 @@ public class SelledBusListActivity extends MultiStateActivity<SelledBusListPrese
     private RefreshAndLoadMoreListView refreshAndLoadMoreListView;
     private SelledBusListAdapter selledBusListAdapter;
     private ArrayList<SelledBus> selledBuses = new ArrayList<>();
+    private MaterialSpinner mMaterialSpinner1, mMaterialSpinner2;
+    private ArrayList<String> mSpinnerData1 = new ArrayList<>(Arrays.asList("选择品牌", "品牌一", "品牌二", "品牌三"));
+    private ArrayList<String> mSpinnerData2 = new ArrayList<>(Arrays.asList("选择车型", "大型车", "中型车", "小型车"));
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +62,8 @@ public class SelledBusListActivity extends MultiStateActivity<SelledBusListPrese
     @Override
     public void initViews() {
         refreshAndLoadMoreListView = (RefreshAndLoadMoreListView)findViewById(R.id.list_view);
+        mMaterialSpinner1 = (MaterialSpinner) findViewById(R.id.spinner1);
+        mMaterialSpinner2 = (MaterialSpinner) findViewById(R.id.spinner2);
     }
 
     @Override
@@ -64,6 +76,8 @@ public class SelledBusListActivity extends MultiStateActivity<SelledBusListPrese
     public void initConfigers() {
         selledBusListAdapter = new SelledBusListAdapter(mContext, selledBuses);
         refreshAndLoadMoreListView.setAdapter(selledBusListAdapter);
+        mMaterialSpinner1.setItems(mSpinnerData1);
+        mMaterialSpinner2.setItems(mSpinnerData2);
     }
 
     @Override

@@ -131,7 +131,7 @@ public class HomeActivity extends MultiStateActivity<HomePresenter> implements H
                 ActivityUtil.goActivity(this, RentedBusListActivity.class, new Bundle());
                 break;
             case R.id.charging_pile_btn:
-
+                ActivityUtil.goActivity(this, ChargePileActivity.class, new Bundle());
                 break;
             case R.id.instrument_btn:
                 ActivityUtil.goActivity(this, InstrumentActivity.class, new Bundle());
