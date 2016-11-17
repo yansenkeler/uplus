@@ -18,7 +18,6 @@ public class LoginContract {
         void unclickableLoginBtn();
         String getMobileInputValue();
         String getPasswordInputValue();
-
     }
 
     public interface IPresenter{

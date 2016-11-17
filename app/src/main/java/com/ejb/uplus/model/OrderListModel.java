@@ -32,4 +32,11 @@ public class OrderListModel extends BaseModel
         orders.add(new Order(""+new Random(System.currentTimeMillis()).nextInt(100000), "http://pic11.nipic.com/20101117/5953219_224031064744_2.jpg", new Date(System.currentTimeMillis()), Order.STATE_1));
         return orders;
     }
+
+    public ArrayList<Order> getRefreshData()
+    {
+        ArrayList<Order> orders = new ArrayList<>();
+        orders.add(new Order(""+new Random(System.currentTimeMillis()).nextInt(100000), "http://pic11.nipic.com/20101117/5953219_224031064744_2.jpg", new Date(System.currentTimeMillis()), Order.STATE_3));
+        return orders;
+    }
 }

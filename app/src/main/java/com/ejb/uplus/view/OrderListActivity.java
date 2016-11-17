@@ -2,6 +2,7 @@ package com.ejb.uplus.view;
 
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.View;
 import android.widget.AdapterView;
 
@@ -22,8 +23,9 @@ import java.util.ArrayList;
  * Created by John on 10/26/2016.
  */
 
-public class OrderListActivity extends MultiStateActivity<OrderListPresenter> implements OrderListContract.IView, AdapterView.OnItemClickListener, OnLoadMoreListener, View.OnClickListener
+public class OrderListActivity extends MultiStateActivity<OrderListPresenter> implements OrderListContract.IView, AdapterView.OnItemClickListener, OnLoadMoreListener, View.OnClickListener, SwipeRefreshLayout.OnRefreshListener
 {
+    private SwipeRefreshLayout mSwipeRefreshLayout;
     private LoadMoreListView listView;
     private OrderListAdapter listAdapter;
     private ArrayList<Order> orders = new ArrayList<>();
@@ -31,37 +33,45 @@ public class OrderListActivity extends MultiStateActivity<OrderListPresenter> im
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        initData();
         initViews();
         initConfigs();
         setListeners();
         initPage();
     }
 
-    private void initData() {
-
-    }
-
     @Override
     public void initViews() {
         listView = (LoadMoreListView)findViewById(R.id.list_view);
+        mSwipeRefreshLayout = (SwipeRefreshLayout)findViewById(R.id.swipe_refresh_layout);
     }
 
     @Override
     public void initConfigs() {
         listAdapter = new OrderListAdapter(mContext, orders);
         listView.setAdapter(listAdapter);
+        mSwipeRefreshLayout.setColorSchemeResources(
+                android.R.color.holo_blue_light,
+                android.R.color.holo_red_light,
+                android.R.color.holo_orange_light,
+                android.R.color.holo_green_light);
     }
 
     @Override
     public void setListeners() {
         listView.setOnItemClickListener(this);
         listView.setOnLoadMoreListener(this);
+        mSwipeRefreshLayout.setOnRefreshListener(this);
+    }
+
+    @Override
+    protected void onResume()
+    {
+        super.onResume();
+        refreshInitList();
     }
 
     @Override
     public void initPage() {
-        mPresenter.getOrderList();
         setTopBarTitle(getResources().getString(R.string.my_orders));
     }
 
@@ -73,9 +83,33 @@ public class OrderListActivity extends MultiStateActivity<OrderListPresenter> im
     }
 
     @Override
+    public void refreshList(int index, ArrayList<Order> orders)
+    {
+        this.orders.addAll(index, orders);
+        listAdapter.notifyDataSetChanged();
+    }
+
+    @Override
+    public void refreshInitList()
+    {
+        orders.clear();
+        mSwipeRefreshLayout.setRefreshing(true);
+        mPresenter.getOrderList();
+    }
+
+    @Override
     public void stopLoad()
     {
         listView.stopLoadMore();
+    }
+
+    @Override
+    public void stopRefresh()
+    {
+        if (mSwipeRefreshLayout.isRefreshing())
+        {
+            mSwipeRefreshLayout.setRefreshing(false);
+        }
     }
 
     @Override
@@ -97,7 +131,14 @@ public class OrderListActivity extends MultiStateActivity<OrderListPresenter> im
 
     @Override
     public void onLoadMore() {
-        new Handler().postDelayed(() -> mPresenter.getLoadMoreData(), 2000);
+        new Handler().postDelayed(new Runnable()
+        {
+            @Override
+            public void run()
+            {
+                mPresenter.getLoadMoreData();
+            }
+        }, 2000);
     }
 
     @Override
@@ -114,7 +155,15 @@ public class OrderListActivity extends MultiStateActivity<OrderListPresenter> im
     }
 
     @Override
-    public void onRightClick() {
-
+    public void onRefresh()
+    {
+        new Handler().postDelayed(new Runnable()
+        {
+            @Override
+            public void run()
+            {
+                mPresenter.getRefreshData();
+            }
+        }, 2000);
     }
 }

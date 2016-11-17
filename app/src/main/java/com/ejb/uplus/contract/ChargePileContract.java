@@ -1,5 +1,8 @@
 package com.ejb.uplus.contract;
 
+import android.support.annotation.IdRes;
+
+import com.baidu.mapapi.model.LatLng;
 import com.cl.core.MVPFrame.BaseView;
 
 /**
@@ -15,10 +18,12 @@ public class ChargePileContract
         void initConfigs();
         void setListeners();
         void initPage();
+        void switchToPoint(LatLng latLng);
+        void addMarker(LatLng point, int iconRes);
     }
 
     public interface IPresenter
     {
-
+        void startLocation();
     }
 }

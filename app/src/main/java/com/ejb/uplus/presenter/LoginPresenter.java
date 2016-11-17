@@ -9,6 +9,8 @@ import com.ejb.uplus.contract.LoginContract;
 import com.ejb.uplus.model.LoginModel;
 import com.ejb.uplus.view.LoginActivity;
 
+import java.util.HashMap;
+
 /**
  * Created by John on 10/25/2016.
  */
@@ -20,6 +22,7 @@ public class LoginPresenter extends BasePresenter<LoginContract.IView> implement
     @Override
     public void login()
     {
+        ((LoginActivity)getIView()).showLoadingDailog("正在登录...");
         String mobile = getIView().getMobileInputValue();
         String password = getIView().getPasswordInputValue();
         ApiStore apiStore = AppClient.retrofit(ApiStore.BASE_URL).create(ApiStore.class);
@@ -28,9 +31,11 @@ public class LoginPresenter extends BasePresenter<LoginContract.IView> implement
             @Override
             public void onSuccess(LoginReturnEntity loginReturnEntity)
             {
+                ((LoginActivity)getIView()).hideLoadingDailog();
                 if (loginReturnEntity.getRet() == 200)
                 {
-                    String token = loginReturnEntity.getData().getToken();
+                    @SuppressWarnings("unchecked") HashMap<String, String> object = (HashMap<String, String>) loginReturnEntity.getData();
+                    String token = object.get("token");
                     new LoginModel().setLogin(true);
                     new LoginModel().putLoginToken(token);
                     ((LoginActivity) getIView()).showToast("登录成功");
@@ -44,6 +49,7 @@ public class LoginPresenter extends BasePresenter<LoginContract.IView> implement
             @Override
             public void onFailure(String s)
             {
+                ((LoginActivity)getIView()).hideLoadingDailog();
                 ((LoginActivity) getIView()).showToast(s);
             }
 

@@ -12,9 +12,10 @@ import com.zookey.universalpreferences.UniversalPreferences;
 public class UplusApplication extends BaseApplication {
     @Override
     public void onCreate() {
+        SDKInitializer.initialize(getApplicationContext());
         super.onCreate();
         UniversalPreferences.initialize(this);
         CrashReport.initCrashReport(getApplicationContext(), "4d0de61f7f", false);
-        SDKInitializer.initialize(getApplicationContext());
+
     }
 }

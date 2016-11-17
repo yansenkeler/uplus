@@ -166,27 +166,27 @@
         android:orientation="horizontal">
 
         <LinearLayout
-            android:id="@+id/demo1_btn"
+            android:id="@+id/illegal_query_btn"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:orientation="vertical"
             android:gravity="center"
             android:background="@drawable/btn_normal_bg"
+            android:orientation="vertical"
             android:padding="8dp"
             android:clickable="true">
 
             <ImageView
                 android:layout_width="@dimen/home_fragment_image_btn_size"
                 android:layout_height="@dimen/home_fragment_image_btn_size"
-                android:src="@drawable/charging_pile_icon"
+                android:src="@drawable/illegal_query_icon"
                 android:layout_margin="4dp"
                 tools:ignore="ContentDescription"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/charging_pile"
+                android:text="@string/string_illegal_query"
                 android:layout_margin="4dp"/>
         </LinearLayout>
 
@@ -196,7 +196,7 @@
             android:background="#ddd"/>
 
         <LinearLayout
-            android:id="@+id/demo2_btn"
+            android:id="@+id/weather_query_btn"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -209,14 +209,14 @@
             <ImageView
                 android:layout_width="@dimen/home_fragment_image_btn_size"
                 android:layout_height="@dimen/home_fragment_image_btn_size"
-                android:src="@drawable/instrument_icon"
+                android:src="@drawable/weather_query_icon"
                 android:layout_margin="4dp"
                 tools:ignore="ContentDescription"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/instrument"
+                android:text="@string/string_weather_query"
                 android:layout_margin="4dp"/>
         </LinearLayout>
     </LinearLayout>

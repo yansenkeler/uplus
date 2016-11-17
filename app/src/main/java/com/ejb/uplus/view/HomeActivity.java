@@ -17,6 +17,7 @@ import com.ejb.uplus.component.other.MultiStateView;
 import com.ejb.uplus.contract.HomeContract;
 import com.ejb.uplus.presenter.HomePresenter;
 import com.ejb.uplus.util.ActivityUtil;
+import com.thefinestartist.finestwebview.FinestWebView;
 
 import java.util.ArrayList;
 
@@ -32,8 +33,8 @@ public class HomeActivity extends MultiStateActivity<HomePresenter> implements H
     private LinearLayout mLeaseBusBtn;
     private LinearLayout mChargingPileBtn;
     private LinearLayout mInstrumentBtn;
-    private LinearLayout mDemo1Btn;
-    private LinearLayout mDemo2Btn;
+    private LinearLayout mIllegalQueryBtn;
+    private LinearLayout mWeatherQueryBtn;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -63,8 +64,8 @@ public class HomeActivity extends MultiStateActivity<HomePresenter> implements H
         mLeaseBusBtn = (LinearLayout) findViewById(R.id.lease_bus_btn);
         mChargingPileBtn = (LinearLayout) findViewById(R.id.charging_pile_btn);
         mInstrumentBtn = (LinearLayout) findViewById(R.id.instrument_btn);
-        mDemo1Btn = (LinearLayout) findViewById(R.id.demo1_btn);
-        mDemo2Btn = (LinearLayout) findViewById(R.id.demo2_btn);
+        mIllegalQueryBtn = (LinearLayout) findViewById(R.id.illegal_query_btn);
+        mWeatherQueryBtn = (LinearLayout) findViewById(R.id.weather_query_btn);
     }
 
     @Override
@@ -73,6 +74,8 @@ public class HomeActivity extends MultiStateActivity<HomePresenter> implements H
         mLeaseBusBtn.setOnClickListener(this);
         mChargingPileBtn.setOnClickListener(this);
         mInstrumentBtn.setOnClickListener(this);
+        mIllegalQueryBtn.setOnClickListener(this);
+        mWeatherQueryBtn.setOnClickListener(this);
     }
 
     @Override
@@ -134,7 +137,14 @@ public class HomeActivity extends MultiStateActivity<HomePresenter> implements H
                 ActivityUtil.goActivity(this, ChargePileActivity.class, new Bundle());
                 break;
             case R.id.instrument_btn:
-                ActivityUtil.goActivity(this, InstrumentActivity.class, new Bundle());
+//                ActivityUtil.loadWeb(this, "http://www.zjdrxny.com/about_n4i1.html");
+                ActivityUtil.loadWebOnlyWithTitle(this, "file:///android_asset/main.html");
+                break;
+            case R.id.illegal_query_btn:
+                ActivityUtil.loadWebOnlyWithTitle(this, "http://szv.122.gov.cn/views/inquiry.html");
+                break;
+            case R.id.weather_query_btn:
+                ActivityUtil.loadWebOnlyWithTitle(this, "http://qq.ip138.com/weather/jiangsu/ZhangJiaGang.htm");
                 break;
             default:
                 break;

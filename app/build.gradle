@@ -10,9 +10,9 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-        jackOptions {
-            enabled true
-        }
+//        jackOptions {
+//            enabled true
+//        }
     }
     buildTypes {
         release {
@@ -46,10 +46,10 @@ android {
         exclude 'META-INF/license'
         exclude 'META-INF/license.txt'
     }
-    compileOptions {
-        targetCompatibility 1.8
-        sourceCompatibility 1.8
-    }
+//    compileOptions {
+//        targetCompatibility 1.8
+//        sourceCompatibility 1.8
+//    }
 }
 
 dependencies {
@@ -86,7 +86,6 @@ dependencies {
     compile 'com.github.zookey:universalpreferences:0.0.4'
     //bug监测
     compile 'com.tencent.bugly:crashreport:2.3.1'
-    compile 'com.github.arcadefire:nice-spinner:b17d3dd'
-    compile 'com.jaredrummler:material-spinner:1.1.0'
     compile project(':baidulibrary')
+    compile 'com.thefinestartist:finestwebview:1.2.7'
 }

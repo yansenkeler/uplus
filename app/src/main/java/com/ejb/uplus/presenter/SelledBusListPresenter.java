@@ -19,6 +19,7 @@ public class SelledBusListPresenter extends BasePresenter<SelledBusListContract.
     {
         ArrayList<SelledBus> selledBuses = new SelledBusListModel().getListData();
         getIView().refreshListView(0, selledBuses);
+        getIView().stopRefresh();
     }
 
     @Override

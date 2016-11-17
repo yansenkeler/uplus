@@ -16,11 +16,15 @@ public class RentedBusListContract {
         void initConfigers();
         void setListener();
         void refreshListView(ArrayList<RentedBus> rentedBuses);
+        void refreshListView(int index, ArrayList<RentedBus> rentedBuses);
         void stopRefresh();
+        void stopLoadMore();
+        void refreshInitList();
     }
 
     public interface IPresenter{
         void getListData();
         void getRefreshData();
+        void getLoadMoreData();
     }
 }

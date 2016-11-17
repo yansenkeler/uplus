@@ -30,7 +30,6 @@ public class RegisterActivity extends MultiStateActivity<RegisterPresenter> impl
     private EditText mPasswordInput;
     private Button mRegisterBtn;
     private CustomTimer customTimer;
-    private SweetAlertDialog loadingDialog;
     private boolean inSendVcodeTime = false;
 
     @Override
@@ -54,10 +53,7 @@ public class RegisterActivity extends MultiStateActivity<RegisterPresenter> impl
 
     @Override
     public void initConfigers() {
-        loadingDialog = new SweetAlertDialog(this, SweetAlertDialog.PROGRESS_TYPE);
-        loadingDialog.getProgressHelper().setBarColor(getResources().getColor(R.color.color_crimson));
-        loadingDialog.setTitleText("Loading...");
-        loadingDialog.setCancelable(false);
+
     }
 
     @Override
@@ -128,18 +124,6 @@ public class RegisterActivity extends MultiStateActivity<RegisterPresenter> impl
     public String getPasswordInputValue()
     {
         return mPasswordInput.getText().toString();
-    }
-
-    @Override
-    public void showLoadingDialog()
-    {
-        loadingDialog.show();
-    }
-
-    @Override
-    public void hideLoadingDailog()
-    {
-        loadingDialog.hide();
     }
 
     @Override

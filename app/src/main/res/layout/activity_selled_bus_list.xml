@@ -15,33 +15,40 @@
         android:layout_height="40dp"
         android:orientation="horizontal">
 
-        <com.jaredrummler.materialspinner.MaterialSpinner
+        <Spinner
             android:id="@+id/spinner1"
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:layout_height="40dp"
-            app:ms_text_color="#333"/>
+            android:layout_height="40dp"/>
 
         <TextView
             android:layout_width="1dp"
             android:layout_height="match_parent"
             android:background="#ddd"/>
 
-        <com.jaredrummler.materialspinner.MaterialSpinner
+        <Spinner
             android:id="@+id/spinner2"
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:layout_height="40dp"
-            app:ms_text_color="#333"/>
-
+            android:layout_height="40dp"/>
     </LinearLayout>
 
-    <com.ejb.uplus.component.RalmListView.RefreshAndLoadMoreListView
-        android:id="@+id/list_view"
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:divider="#ddd"
-        android:dividerHeight="1dp">
+        android:layout_height="1dp"
+        android:background="#ddd"/>
 
-    </com.ejb.uplus.component.RalmListView.RefreshAndLoadMoreListView>
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_refresh_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.ejb.uplus.component.RalmListView.LoadMoreListView
+            android:id="@+id/list_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="#ddd"
+            android:dividerHeight="1dp"/>
+
+    </android.support.v4.widget.SwipeRefreshLayout>
 </LinearLayout>

@@ -48,4 +48,8 @@
         <!--<item name="android:windowIsTranslucent">false</item>-->
         <!--<item name="android:backgroundDimAmount">0.6</item>-->
     </style>
+
+    <style name="style_spinner" parent="@android:style/Widget.DeviceDefault.Light.Spinner">
+
+    </style>
 </resources>

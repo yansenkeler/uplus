@@ -17,11 +17,15 @@ public class OrderListContract {
         void setListeners();
         void initPage();
         void refreshList(ArrayList<Order> orders);
+        void refreshList(int index, ArrayList<Order> orders);
+        void refreshInitList();
         void stopLoad();
+        void stopRefresh();
     }
 
     public interface IPresenter{
         void getOrderList();
         void getLoadMoreData();
+        void getRefreshData();
     }
 }

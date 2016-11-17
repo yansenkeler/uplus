@@ -31,4 +31,13 @@ public class RentedBusListModel extends BaseModel
         rentedBuses.add(new RentedBus("http://news.ddc.net.cn/UpFile/zmj2012/DSC_7822.jpg", "物流车"+count, count+"元/天"));
         return rentedBuses;
     }
+
+    public ArrayList<RentedBus> getLoadMoreRentedBuses()
+    {
+        ArrayList<RentedBus> rentedBuses = new ArrayList<>();
+        Random random = new Random(System.currentTimeMillis());
+        int count = random.nextInt(1000);
+        rentedBuses.add(new RentedBus("http://news.ddc.net.cn/UpFile/zmj2012/DSC_7822.jpg", "物流车"+count, count+"元/天"));
+        return rentedBuses;
+    }
 }

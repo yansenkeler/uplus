@@ -20,8 +20,6 @@ public class RegisterContract {
         String getIcodeInputValue();
         void setIcodeInputValue(String value);
         String getPasswordInputValue();
-        void showLoadingDialog();
-        void hideLoadingDailog();
         void enableRegisterBtn();
         void disableRegisterBtn();
     }

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="brands">
+        <item>品牌1</item>
+        <item>品牌2</item>
+        <item>品牌3</item>
+        <item>品牌4</item>
+        <item>品牌5</item>
+    </string-array>
+</resources>

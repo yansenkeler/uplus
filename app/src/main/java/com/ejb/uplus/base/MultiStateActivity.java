@@ -12,6 +12,8 @@ import com.ejb.uplus.component.other.CustomLoadingView;
 import com.ejb.uplus.component.other.MultiStateView;
 import com.ejb.uplus.component.toolbar.TopBar;
 
+import cn.pedant.SweetAlert.SweetAlertDialog;
+
 /**
  * Created by John on 11/7/2016.
  */
@@ -26,6 +28,7 @@ public abstract class MultiStateActivity<P extends BasePresenter> extends BaseAc
     private boolean isTopBarShown = true;
     private boolean isTopBarBackBtnShown = true;
     private boolean isTopBarRightContentShown = false;
+    private SweetAlertDialog loadingDialog;
 
     @SuppressWarnings("unchecked")
     @Override
@@ -51,6 +54,24 @@ public abstract class MultiStateActivity<P extends BasePresenter> extends BaseAc
         topBar.setHasBackBtn(isTopBarBackBtnShown);
         topBar.setHasRightContent(isTopBarRightContentShown);
         topBar.setRightContentRef(getRightContentRef());
+        loadingDialog = new SweetAlertDialog(this, SweetAlertDialog.PROGRESS_TYPE);
+        loadingDialog.getProgressHelper().setBarColor(getResources().getColor(R.color.color_crimson));
+        loadingDialog.setTitleText("Loading...");
+        loadingDialog.setCancelable(false);
+    }
+
+    public void showLoadingDailog(String text)
+    {
+        loadingDialog.setTitleText(text);
+        loadingDialog.show();
+    }
+
+    public void hideLoadingDailog()
+    {
+        if (loadingDialog!=null && loadingDialog.isShowing())
+        {
+            loadingDialog.hide();
+        }
     }
 
     protected void setTopBarTitle(String title)

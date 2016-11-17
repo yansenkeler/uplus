@@ -18,7 +18,7 @@ public class RegisterPresenter extends BasePresenter<RegisterContract.IView> imp
     @Override
     public void register()
     {
-        getIView().showLoadingDialog();
+        ((RegisterActivity)getIView()).showLoadingDailog("正在注册...");
         String mobile = getIView().getMobileInputValue();
         String vcode = getIView().getIcodeInputValue();
         String password = getIView().getPasswordInputValue();
@@ -28,7 +28,7 @@ public class RegisterPresenter extends BasePresenter<RegisterContract.IView> imp
             @Override
             public void onSuccess(SimpleReturnEntity simpleReturnEntity)
             {
-                getIView().hideLoadingDailog();
+                ((RegisterActivity)getIView()).hideLoadingDailog();
                 if (simpleReturnEntity.getRet()==200)
                 {
                     ((RegisterActivity)getIView()).showToast("注册成功");
@@ -42,14 +42,14 @@ public class RegisterPresenter extends BasePresenter<RegisterContract.IView> imp
             @Override
             public void onFailure(String s)
             {
-                getIView().hideLoadingDailog();
+                ((RegisterActivity)getIView()).hideLoadingDailog();
                 ((RegisterActivity)getIView()).showToast(s);
             }
 
             @Override
             public void onFinish()
             {
-                getIView().hideLoadingDailog();
+
             }
         });
     }
@@ -57,7 +57,7 @@ public class RegisterPresenter extends BasePresenter<RegisterContract.IView> imp
     @Override
     public void sendIcode()
     {
-        getIView().showLoadingDialog();
+        ((RegisterActivity)getIView()).showLoadingDailog("正在发送验证码...");
         String mobile = getIView().getMobileInputValue();
 
         ApiStore apiStore = AppClient.retrofit(ApiStore.BASE_URL).create(ApiStore.class);
@@ -66,7 +66,7 @@ public class RegisterPresenter extends BasePresenter<RegisterContract.IView> imp
             @Override
             public void onSuccess(SimpleReturnEntity simpleReturnEntity)
             {
-                getIView().hideLoadingDailog();
+                ((RegisterActivity)getIView()).hideLoadingDailog();
                 if (simpleReturnEntity.getRet()==200)
                 {
                     getIView().setIcodeInputValue((String) simpleReturnEntity.getData());
@@ -80,14 +80,14 @@ public class RegisterPresenter extends BasePresenter<RegisterContract.IView> imp
             @Override
             public void onFailure(String s)
             {
-                getIView().hideLoadingDailog();
+                ((RegisterActivity)getIView()).hideLoadingDailog();
                 ((RegisterActivity)getIView()).showToast(s);
             }
 
             @Override
             public void onFinish()
             {
-                getIView().hideLoadingDailog();
+
             }
         });
     }

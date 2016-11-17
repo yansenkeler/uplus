@@ -20,6 +20,7 @@ public class SelledBusListContract {
         void refreshListView(ArrayList<SelledBus> selledBuses);
         void stopRefresh();
         void stopLoad();
+        void refreshInitList();
     }
 
     public interface IPresenter{

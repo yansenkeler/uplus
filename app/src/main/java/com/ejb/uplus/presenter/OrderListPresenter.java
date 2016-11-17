@@ -18,6 +18,7 @@ public class OrderListPresenter extends BasePresenter<OrderListContract.IView> i
     public void getOrderList() {
         ArrayList<Order> orders = new OrderListModel().getOrderListData();
         getIView().refreshList(orders);
+        getIView().stopRefresh();
     }
 
     @Override
@@ -26,5 +27,13 @@ public class OrderListPresenter extends BasePresenter<OrderListContract.IView> i
         ArrayList<Order> orders = new OrderListModel().getLoadMoreData();
         getIView().refreshList(orders);
         getIView().stopLoad();
+    }
+
+    @Override
+    public void getRefreshData()
+    {
+        ArrayList<Order> orders = new OrderListModel().getRefreshData();
+        getIView().refreshList(0, orders);
+        getIView().stopRefresh();
     }
 }

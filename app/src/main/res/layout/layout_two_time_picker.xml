@@ -14,43 +14,9 @@
         android:gravity="center"
         android:padding="8dp"/>
 
-    <LinearLayout
+    <include
         android:id="@+id/timepicker1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@android:color/white"
-        android:orientation="horizontal">
-
-        <com.bigkoo.pickerview.lib.WheelView
-            android:id="@+id/year"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
-
-        <com.bigkoo.pickerview.lib.WheelView
-            android:id="@+id/month"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1.1" />
-
-        <com.bigkoo.pickerview.lib.WheelView
-            android:id="@+id/day"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1.1" />
-
-        <com.bigkoo.pickerview.lib.WheelView
-            android:id="@+id/hour"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1.1" />
-
-        <com.bigkoo.pickerview.lib.WheelView
-            android:id="@+id/min"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1.1" />
-    </LinearLayout>
+        layout="@layout/layout_single_date_wheel"/>
 
     <TextView
         android:id="@+id/title2"
@@ -61,41 +27,8 @@
         android:gravity="center"
         android:padding="8dp"/>
 
-    <LinearLayout
+    <include
         android:id="@+id/timepicker2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@android:color/white"
-        android:orientation="horizontal">
+        layout="@layout/layout_single_date_wheel"/>
 
-        <com.bigkoo.pickerview.lib.WheelView
-            android:id="@+id/year"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
-
-        <com.bigkoo.pickerview.lib.WheelView
-            android:id="@+id/month"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1.1" />
-
-        <com.bigkoo.pickerview.lib.WheelView
-            android:id="@+id/day"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1.1" />
-
-        <com.bigkoo.pickerview.lib.WheelView
-            android:id="@+id/hour"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1.1" />
-
-        <com.bigkoo.pickerview.lib.WheelView
-            android:id="@+id/min"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1.1" />
-    </LinearLayout>
 </LinearLayout>

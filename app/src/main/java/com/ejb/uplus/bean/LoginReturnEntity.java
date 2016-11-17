@@ -7,7 +7,7 @@ package com.ejb.uplus.bean;
 public class LoginReturnEntity
 {
     private int ret;
-    private LoginData data;
+    private Object data;
     private String msg;
 
     public LoginReturnEntity()
@@ -32,12 +32,12 @@ public class LoginReturnEntity
         this.ret = ret;
     }
 
-    public LoginData getData()
+    public Object getData()
     {
         return data;
     }
 
-    public void setData(LoginData data)
+    public void setData(Object data)
     {
         this.data = data;
     }
