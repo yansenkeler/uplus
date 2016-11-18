@@ -91,7 +91,12 @@ public class SelledBusListActivity extends MultiStateActivity<SelledBusListPrese
         ArrayAdapter<String> adapter2 = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, mSpinnerData2);
         mSpinner2.setAdapter(adapter2);
         mSpinner2.setDropDownWidth(ResUtil.getScreenWidth(this)/2);
-        mSwipeRefreshLayout.setColorSchemeResources(android.R.color.holo_blue_light, android.R.color.holo_red_light, android.R.color.holo_orange_light, android.R.color.holo_green_light);
+        mSwipeRefreshLayout.setColorSchemeResources(
+                android.R.color.holo_blue_light,
+                android.R.color.holo_red_light,
+                android.R.color.holo_orange_light,
+                android.R.color.holo_green_light
+        );
     }
 
     @Override

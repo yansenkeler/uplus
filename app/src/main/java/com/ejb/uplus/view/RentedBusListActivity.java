@@ -57,7 +57,6 @@ public class RentedBusListActivity extends MultiStateActivity<RentedBusListPrese
 
     @Override
     public void initPage() {
-
         setTopBarTitle("待租车辆");
     }
 
