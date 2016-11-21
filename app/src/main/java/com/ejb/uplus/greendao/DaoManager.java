@@ -2,6 +2,7 @@ package com.ejb.uplus.greendao;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
+import android.widget.ListView;
 
 import com.ejb.uplus.greendao.gen.DaoMaster;
 import com.ejb.uplus.greendao.gen.DaoSession;
@@ -19,11 +20,19 @@ public class DaoManager
     private DaoMaster mDaoMaster;
     private DaoSession mDaoSession;
 
+    private DaoManager() {}
+
     public static DaoManager getInstance()
     {
         if (instance==null)
         {
-            instance = new DaoManager();
+            synchronized (DaoManager.class)
+            {
+                if (instance==null)
+                {
+                    instance = new DaoManager();
+                }
+            }
         }
         return instance;
     }
