@@ -18,12 +18,12 @@ greendao {
 }
 
 android {
-    compileSdkVersion 24
+    compileSdkVersion 25
     buildToolsVersion "25.0.0"
     defaultConfig {
         applicationId "com.ejb.uplus"
         minSdkVersion 16
-        targetSdkVersion 24
+        targetSdkVersion 25
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -78,10 +78,10 @@ dependencies {
 //    compile 'com.cl:webview:1.1.1'
     compile 'com.cl:clutil:1.0.0'
     //    compile 'com.cl:twidget:1.0.2'
-    compile 'com.android.support:appcompat-v7:24.0.0'
+    compile 'com.android.support:appcompat-v7:25.0.0'
     testCompile 'junit:junit:4.12'
     //图片轮播
-    compile 'com.android.support:support-v4:24.0.0'
+    compile 'com.android.support:support-v4:25.0.0'
     compile 'com.squareup.picasso:picasso:2.3.2'
     compile 'com.nineoldandroids:library:2.4.0'
     compile 'com.daimajia.slider:library:1.1.5@aar'
