@@ -1,7 +1,5 @@
 package com.ejb.uplus.greendao.gen;
 
-import android.widget.ListView;
-
 import java.util.Map;
 
 import org.greenrobot.greendao.AbstractDao;
@@ -30,6 +28,7 @@ public class DaoSession extends AbstractDaoSession {
     public DaoSession(Database db, IdentityScopeType type, Map<Class<? extends AbstractDao<?, ?>>, DaoConfig>
             daoConfigMap) {
         super(db);
+
         busDaoConfig = daoConfigMap.get(BusDao.class).clone();
         busDaoConfig.initIdentityScope(type);
 
