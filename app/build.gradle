@@ -23,7 +23,7 @@ android {
             storeFile file("fruitkeystore.keystore")
             storePassword '123456'
             keyAlias 'fruit'
-            keyPassword '1qazse4'
+            keyPassword '123456'
         }
     }
     compileSdkVersion 25
