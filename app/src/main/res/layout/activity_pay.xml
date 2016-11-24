@@ -28,6 +28,17 @@
                     android:maxLines="1"
                     app:autoFit="true"
                     app:font="droid_sans" />
+
+                <ayar.oktay.advancedtextview.AdvancedTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:text="pacifico"
+                    android:textColor="@color/color_crimson"
+                    android:maxLines="1"
+                    android:layout_alignParentRight="true"
+                    app:autoFit="true"
+                    app:font="pacifico" />
             </RelativeLayout>
 
             <RadioGroup
