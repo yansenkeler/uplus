@@ -20,4 +20,7 @@
     <string name="for_sell_buses">待售车辆</string>
     <string name="string_illegal_query">违章查询</string>
     <string name="string_weather_query">天气查询</string>
+    <string name="pay">支付</string>
+    <string name="zhifubao">支付宝</string>
+    <string name="weixin">微信</string>
 </resources>

@@ -134,6 +134,7 @@ public class ChargePileActivity extends MultiStateActivity<ChargePilePresenter> 
     {
         super.onDestroy();
         mMapView.onDestroy();
+        mPresenter.destroy();
     }
 
     @Override

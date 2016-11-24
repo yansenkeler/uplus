@@ -50,12 +50,16 @@
                 android:layout_margin="4dp"
                 tools:ignore="ContentDescription"/>
 
-            <TextView
+            <ayar.oktay.advancedtextview.AdvancedTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/buy_bus"
                 android:textColor="#23ac38"
-                android:layout_margin="4dp"/>
+                android:layout_margin="4dp"
+                android:maxLines="1"
+                app:autoFit="false"
+                app:font="droid_sans_bold"
+                />
         </LinearLayout>
 
         <TextView
@@ -80,12 +84,15 @@
                 android:layout_margin="4dp"
                 tools:ignore="ContentDescription"/>
 
-            <TextView
+            <ayar.oktay.advancedtextview.AdvancedTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/lease_bus"
                 android:textColor="#23ac38"
-                android:layout_margin="4dp"/>
+                android:layout_margin="4dp"
+                android:maxLines="1"
+                app:autoFit="false"
+                app:font="droid_sans_bold"/>
         </LinearLayout>
     </LinearLayout>
 
@@ -117,11 +124,14 @@
                 android:layout_margin="4dp"
                 tools:ignore="ContentDescription"/>
 
-            <TextView
+            <ayar.oktay.advancedtextview.AdvancedTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/charging_pile"
-                android:layout_margin="4dp"/>
+                android:layout_margin="4dp"
+                android:maxLines="1"
+                app:autoFit="false"
+                app:font="droid_sans_bold"/>
         </LinearLayout>
 
         <TextView
@@ -146,11 +156,14 @@
                 android:layout_margin="4dp"
                 tools:ignore="ContentDescription"/>
 
-            <TextView
+            <ayar.oktay.advancedtextview.AdvancedTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/instrument"
-                android:layout_margin="4dp"/>
+                android:layout_margin="4dp"
+                android:maxLines="1"
+                app:autoFit="false"
+                app:font="droid_sans_bold"/>
         </LinearLayout>
     </LinearLayout>
 
@@ -183,11 +196,14 @@
                 android:layout_margin="4dp"
                 tools:ignore="ContentDescription"/>
 
-            <TextView
+            <ayar.oktay.advancedtextview.AdvancedTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/string_illegal_query"
-                android:layout_margin="4dp"/>
+                android:layout_margin="4dp"
+                android:maxLines="1"
+                app:autoFit="false"
+                app:font="droid_sans_bold"/>
         </LinearLayout>
 
         <TextView
@@ -213,11 +229,14 @@
                 android:layout_margin="4dp"
                 tools:ignore="ContentDescription"/>
 
-            <TextView
+            <ayar.oktay.advancedtextview.AdvancedTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/string_weather_query"
-                android:layout_margin="4dp"/>
+                android:layout_margin="4dp"
+                android:maxLines="1"
+                app:autoFit="false"
+                app:font="droid_sans_bold"/>
         </LinearLayout>
     </LinearLayout>
 

@@ -1,19 +1,24 @@
 package com.ejb.uplus.view;
 
 import android.os.Bundle;
+import android.view.View;
 
 import com.cl.core.MVPFrame.BaseView;
 import com.ejb.uplus.R;
 import com.ejb.uplus.base.MultiStateActivity;
 import com.ejb.uplus.contract.PayContract;
 import com.ejb.uplus.presenter.PayPresenter;
+import com.ejb.uplus.util.ActivityUtil;
+
+import ayar.oktay.advancedtextview.AdvancedTextView;
 
 /**
  * Created by John on 11/1/2016.
  */
 
-public class PayActivity extends MultiStateActivity<PayPresenter> implements PayContract.IView
-{
+public class PayActivity extends MultiStateActivity<PayPresenter> implements PayContract.IView, View.OnClickListener {
+    private AdvancedTextView mPayBtn;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -28,6 +33,7 @@ public class PayActivity extends MultiStateActivity<PayPresenter> implements Pay
     @Override
     public void initViews()
     {
+        mPayBtn = (AdvancedTextView) findViewById(R.id.pay_btn);
     }
 
     @Override
@@ -39,6 +45,7 @@ public class PayActivity extends MultiStateActivity<PayPresenter> implements Pay
     @Override
     public void setListeners()
     {
+        mPayBtn.setOnClickListener(this);
     }
 
     @Override
@@ -69,5 +76,16 @@ public class PayActivity extends MultiStateActivity<PayPresenter> implements Pay
     public void onRightClick()
     {
 
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.pay_btn:
+                ActivityUtil.goActivity(this, UserProfileActivity.class, new Bundle());
+                break;
+            default:
+                break;
+        }
     }
 }

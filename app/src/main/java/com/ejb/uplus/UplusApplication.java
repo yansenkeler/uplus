@@ -1,12 +1,8 @@
 package com.ejb.uplus;
 
-import android.database.sqlite.SQLiteDatabase;
-
 import com.baidu.mapapi.SDKInitializer;
 import com.cl.core.application.BaseApplication;
 import com.ejb.uplus.greendao.DaoManager;
-import com.ejb.uplus.greendao.gen.DaoMaster;
-import com.ejb.uplus.greendao.gen.DaoSession;
 import com.tencent.bugly.crashreport.CrashReport;
 import com.zookey.universalpreferences.UniversalPreferences;
 

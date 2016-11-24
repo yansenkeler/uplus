@@ -25,5 +25,6 @@ public class ChargePileContract
     public interface IPresenter
     {
         void startLocation();
+        void destroy();
     }
 }
